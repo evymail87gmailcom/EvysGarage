@@ -12,7 +12,13 @@ int main() {
 	vector <Garage>* myGarageVector;
 	Garage* myFirstGarage= new Garage();
 	
-	myFirstGarage->addVehicleAttributes();
+
+	for (int i = 0; i < 5; i++)
+	{
+		myFirstGarage->addVehicleAttributes();
+		myFirstGarage->addVehicle();
+		myFirstGarage->printVehicle();
+	}
 	//myFirstGarage->addVehicle();
 	//myFirstGarage->printVehicle();
 	

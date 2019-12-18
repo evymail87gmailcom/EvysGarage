@@ -14,6 +14,7 @@ using namespace std;
 -
 */
 
+
 class Vehicle {
 protected:
 	string color;
@@ -54,7 +55,7 @@ public:
 	virtual void listVehicles() = 0;
 	virtual void removeVehicles() = 0;
 	virtual void printVehicleAttributes() = 0;
-
+	
 };
 
 
@@ -67,8 +68,9 @@ protected:
 	string electric;
 	
 public:
+	
 	Bicycle() {
-
+		
 		nameOfBrand = "";
 		color = "";
 		typeOfWheels = "";
@@ -101,17 +103,20 @@ public:
 		
 	};
 	void addVehicle() {
+		
+
 
 	};
 	void printVehicleAttributes() {
 		cout << "\n";
 		cout << "Name:\t\t" << nameOfBrand << endl;
-		cout << "Color:\t\t" << color << endl;
-		cout << "Type of wheels:\t" << typeOfWheels << endl;
+		cout << "Color:\t\t" << color<< endl;
+		cout << "Type of wheels:\t" << typeOfWheels<< endl;
 		cout << "Number of gears:" << numberOfGears << endl;
 		cout << "Type of bike:\t" << typeOfBike << endl;
 		cout << "Electric:\t" << electric << endl;
-
+		cout << "\n";
+	
 	};
 
 	void getVehicle() {
@@ -124,17 +129,18 @@ public:
 		cout << "Delete objekt of choice: " << endl;
 	};
 
-
+	
 
 
 
 	~Bicycle() {};
 };
 
-/*Subklass Motorcykel
+/*
+//Subklass Motorcykel
 class MotorCycle :public Vehicle {
 protected:
-	struct vehicle motorBike;
+	
 public:
 	MotorCycle() {};
 	MotorCycle() {};
@@ -143,7 +149,7 @@ public:
 //Subklass Bil
 class Car :public Vehicle {
 protected:
-	struct vehicle car;
+	
 public:
 	Car() {};
 	Car() {};
@@ -152,7 +158,7 @@ public:
 //Subklass Bus
 class Bus :public Vehicle {
 protected:
-	struct vehicle bus;
+	
 public:
 	Bus() {};
 	Bus() {};
@@ -161,15 +167,15 @@ public:
 //Subklass Lastbil
 class Truck :public Vehicle {
 protected:
-	struct vehicle truck;
+	
 public:
 	Truck() {};
 	Truck() {};
 	~Truck() {};
 };
+*/
 
-
- */
+ 
 
 class Garage {
 protected:
@@ -195,33 +201,63 @@ public:
 	void addVehicleAttributes() {
 		cout << "Choose the type of vehicle you would like to add: " << endl;
 		cout << "1 for Bicycle: " << endl;
+		cout << "2 for Motorcycle: " << endl;
+		cout << "3 for Car: " << endl;
+		cout << "4 for Truck: " << endl;
+		cout << "5 for Bus: " << endl;
 		cin >> anyVehicle;
 		switch (anyVehicle)
 		{
 		case 1: {
 			myVehicle = new Bicycle();
+			cout << "One bike it is! " << endl;
+			cout << "Please register your Bicycle: " << endl;
 			myVehicle->addVehicleAttributes();
-			myVehicle->printVehicleAttributes();
-			
+			break;
 		}
+		/*case 2: {
+			myVehicle = new MotorCycle();
+			break;
+		}
+		case 3: {
+			myVehicle = new Car();
+			break;
+		}
+		case 4: {
+			myVehicle = new Truck();
+			break;
+		}
+		  case5: {
+			  myVehicle = new Bus();
+		}
+		*/
 		default:
 			break;
 		}
 	};
 
-	//Adds a vehicle to the garage
+	//Adds a vehicle to the garage. WORKS!
 	void addVehicle() {
 		myGarage.push_back(myVehicle);
-
+		cout << "Pushed back!" << endl;
 	}
 
-	//Prints the first element of the garage
+	//Prints the first element of the garage, WORKS!!!
 	void printVehicle() {
-		myGarage[0]->printVehicleAttributes();
+		for  ( int i = 0; i < myGarage.size(); i++)
+		{
+			myGarage[i]->printVehicleAttributes();
+		}
+		
+		cout << "I printed a garage" << endl;
 		
 	}
 
-	//virtual void getVehicle() = 0;
-	//virtual void listVehicles() = 0;
-	//virtual void removeVehicles() = 0;
+	//Implement searchfunktion to compare 
+	void getVehicle() {
+		
+	
+	}
+	//virtual void listVehicles(Vehicle*test) = 0;
+	//virtual void removeVehicles(Vehicle*test) = 0;
 };
