@@ -65,6 +65,7 @@ class Bicycle :public Vehicle {
 protected:
 	string typeOfBike;
 	string electric;
+	
 public:
 	Bicycle() {
 
@@ -97,6 +98,10 @@ public:
 		cin >> typeOfBike;
 		cout << "Enter if it is an electric-bike(yes/no): " << endl;
 		cin >> electric;
+		
+	};
+	void addVehicle() {
+
 	};
 	void printVehicleAttributes() {
 		cout << "\n";
@@ -107,10 +112,8 @@ public:
 		cout << "Type of bike:\t" << typeOfBike << endl;
 		cout << "Electric:\t" << electric << endl;
 
-	}
-	void addVehicle() {
-		
-	}
+	};
+
 	void getVehicle() {
 		cout << "sort vehicles" << endl;
 	};
@@ -173,9 +176,10 @@ protected:
 	int anyVehicle;
 	int numberOfVehicles;
 	Vehicle* myVehicle;
-	vector <Vehicle*>myGarage;
+
 	string nameOfGarage;
 public:
+	vector <Vehicle*>myGarage;
 	Garage() {
 		anyVehicle = 0;
 		numberOfVehicles = 0;
@@ -199,21 +203,22 @@ public:
 			myVehicle->addVehicleAttributes();
 			myVehicle->printVehicleAttributes();
 			
-
 		}
 		default:
 			break;
 		}
 	};
 
+	//Adds a vehicle to the garage
 	void addVehicle() {
-		
 		myGarage.push_back(myVehicle);
+
 	}
+
+	//Prints the first element of the garage
 	void printVehicle() {
-		for (int i = 0; i < myGarage.size() - 1; i++) {
-			cout << i << endl;
-		}
+		myGarage[0]->printVehicleAttributes();
+		
 	}
 
 	//virtual void getVehicle() = 0;
