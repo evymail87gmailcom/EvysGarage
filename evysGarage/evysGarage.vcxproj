@@ -123,10 +123,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bicycle.cpp" />
+    <ClCompile Include="Bus.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Garage.cpp" />
     <ClCompile Include="MainGarage.cpp" />
+    <ClCompile Include="MotorCycle.cpp" />
+    <ClCompile Include="Truck.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainHeader.h" />
+    <ClInclude Include="Bicycle.h" />
+    <ClInclude Include="Bus.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="GarageHeader.h" />
+    <ClInclude Include="MotorCycle.h" />
+    <ClInclude Include="Truck.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
