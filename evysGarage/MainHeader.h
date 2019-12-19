@@ -76,8 +76,8 @@ public:
 	virtual string getReg() = 0;
 	virtual void addVehicleAttributes() = 0;
 	virtual void printVehicleAttributes() = 0;
-	
-	
+
+
 };
 
 
@@ -88,16 +88,16 @@ class Bicycle :public Vehicle {
 protected:
 	string typeOfBike;
 	string electric;
-	
+
 public:
-	
+
 	Bicycle() {
-		
+
 		//Default för basklass
-		typeOfFuel="";
-		typeOfGearBox="";
-		regNr ="" ;
-		numberOfwheels=0;
+		typeOfFuel = "";
+		typeOfGearBox = "";
+		regNr = "";
+		numberOfwheels = 0;
 		//Specifikt för klassen
 		nameOfBrand = "";
 		color = "";
@@ -134,23 +134,23 @@ public:
 		cin >> regNr;
 
 	};
-	
+
 	void printVehicleAttributes() {
 		cout << "\n";
 		cout << "Name:\t\t" << nameOfBrand << endl;
-		cout << "Color:\t\t" << color<< endl;
-		cout << "Type of wheels:\t" << typeOfWheels<< endl;
+		cout << "Color:\t\t" << color << endl;
+		cout << "Type of wheels:\t" << typeOfWheels << endl;
 		cout << "Number of gears:" << numberOfGears << endl;
 		cout << "Type of bike:\t" << typeOfBike << endl;
 		cout << "Electric:\t" << electric << endl;
 		cout << "RegNr:\t" << regNr << endl;
 		cout << "\n";
-	
+
 	};
 	string getReg() {
 		return regNr;
 	}
-	
+
 	~Bicycle() {};
 };
 
@@ -172,7 +172,7 @@ public:
 //Subklass Bil
 class Car :public Vehicle {
 protected:
-	
+
 public:
 	Car() {};
 	Car() {};
@@ -185,7 +185,7 @@ public:
 //Subklass Bus
 class Bus :public Vehicle {
 protected:
-int numberOfSeats;	
+int numberOfSeats;
 public:
 	Bus() {};
 	Bus() {};
@@ -198,7 +198,7 @@ public:
 //Subklass Lastbil
 class Truck :public Vehicle {
 protected:
-	
+
 public:
 	Truck() {};
 	Truck() {};
@@ -210,7 +210,7 @@ public:
 };
 */
 
- 
+
 
 class Garage {
 protected:
@@ -220,6 +220,11 @@ protected:
 	string nameOfGarage;
 	vector<Vehicle>::iterator it2;
 public:
+	int bicycleCounter = 0;
+	int carCounter = 0;
+	int truckCounter = 0;
+	int motorCycleCounter = 0;
+	int busCounter = 0;
 	vector <Vehicle*>myGarage;
 	Garage() {
 		anyVehicle = 0;
@@ -234,6 +239,8 @@ public:
 
 	//Här finns funktionen för hur fordonet skall läggas till
 	void addVehicleAttributes() {
+
+
 		cout << "Choose the type of vehicle you would like to add: " << endl;
 		cout << "1 for Bicycle: " << endl;
 		cout << "2 for Motorcycle: " << endl;
@@ -248,25 +255,43 @@ public:
 			cout << "One bike it is! " << endl;
 			cout << "Please register your Bicycle: " << endl;
 			myVehicle->addVehicleAttributes();
+			bicycleCounter++;
 
 			break;
 		}
-		/*case 2: {
-			myVehicle = new MotorCycle();
-			break;
-		}
-		case 3: {
-			myVehicle = new Car();
-			break;
-		}
-		case 4: {
-			myVehicle = new Truck();
-			break;
-		}
-		  case5: {
-			  myVehicle = new Bus();
-		}
-		*/
+			  /*
+			 case 2: {
+				 myVehicle = new MotorCycle();
+				 cout << "One Motorbike it is! " << endl;
+				 cout << "Please register your Motorcycle: " << endl;
+				 myVehicle->addVehicleAttributes();
+				 motorCycleCounter++;
+					   break;
+			 }
+			 case 3: {
+				  myVehicle = new Car();
+				 cout << "One car it is! " << endl;
+				 cout << "Please register your car: " << endl;
+				 myVehicle->addVehicleAttributes();
+				 carCounter++;
+					   break;
+			 }
+			  case 4: {
+					   myVehicle = new Truck();
+						 cout << "One truck it is! " << endl;
+				 cout << "Please register your truck: " << endl;
+				 myVehicle->addVehicleAttributes();
+				 truckCounter++;
+					   break;
+				   }
+					 case5: {
+						 myVehicle = new Bus();
+							 cout << "One bus it is! " << endl;
+				 cout << "Please register your bus: " << endl;
+				 myVehicle->addVehicleAttributes();
+				 busCounter++;
+				   }
+				   */
 		default:
 			break;
 		}
@@ -280,26 +305,26 @@ public:
 
 	//Prints every element of the garage, WORKS!!!
 	void listVehicles() {
-		for  ( int i = 0; i < myGarage.size(); i++)
+		for (int i = 0; i < myGarage.size(); i++)
 		{
 			myGarage[i]->printVehicleAttributes();
 		}
 		cout << "I printed a garage!" << endl;
 	}
 
-	//Searchfunction to find a specific registrationnumber in the garage
+	//Searchfunction to find a specific registrationnumber in the garage, Works!!
 	int searchVehicle() {
-		
+
 		cout << "Enter the regnr to search for: " << endl;
-		bool foundVehicle=0;
+		bool foundVehicle = 0;
 		string input;
-		cin>>input;
+		cin >> input;
 
 		for (auto i = 0; i != myGarage.size(); i++)
 		{
-			string regNr = myGarage[i]->getReg();	
-			if (regNr == input){
-				cout << "Found vehicle at parkingspot nr: " << i+1 << endl;
+			string regNr = myGarage[i]->getReg();
+			if (regNr == input) {
+				cout << "Found vehicle at parkingspot nr: " << i + 1 << endl;
 				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
 				//returns the elementslot for the found object
 				return i;
@@ -312,8 +337,15 @@ public:
 		}
 		return -1;
 	}
-	
-	//virtual void listVehicles() = 0;
+	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
+	void listTypeOfVehicles() {
+		cout << "Type of vehicle:\t" << "Number of vehicles:\t" << endl;
+		cout << "Bicycles:\t\t" << bicycleCounter << endl;
+		cout << "Cars:\t\t\t" << carCounter << endl;
+		cout << "Trucks:\t\t\t" << truckCounter << endl;
+		cout << "Motorcycles:\t\t" << motorCycleCounter << endl;
+		cout << "Bus:\t\t\t" << busCounter << endl;
+	}
 	//virtual void removeVehicles() = 0;
-	//virtual void listTypeOfVehicles() = 0;
+
 };

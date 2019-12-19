@@ -14,7 +14,7 @@ int main() {
 	string nameOfGarage;
 	vector <Garage>* myGarageVector;
 	Garage* myFirstGarage= new Garage();
-	bool search = "y";
+	bool search="y";
 
 
 	for (int i = 0; i < 2; i++)
@@ -32,11 +32,11 @@ int main() {
 	//loop för sökning
 	while (search == true){
 	myFirstGarage->searchVehicle();
-	cout << "Do you wish to do another search? " << endl;
+	cout << "Do you wish to do another search? yes=1/no=0" << endl;
 	cin >> search;
 
 	}
-
+	myFirstGarage->listTypeOfVehicles();
 	
 	
 
