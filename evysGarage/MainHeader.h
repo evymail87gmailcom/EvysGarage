@@ -1,8 +1,10 @@
 #pragma once
 #include<iostream>
+#include<istream>
+#include<fstream>
 #include<string>
 #include<vector>
-
+#include<algorithm>
 using namespace std;
 
 
@@ -14,6 +16,27 @@ using namespace std;
 -
 */
 
+template < typename T>
+std::pair<bool, int > findInVector(const std::vector<T>& vecOfElements, const T& element)
+{
+	std::pair<bool, int > result;
+
+	// Find given element in vector
+	auto it = std::find(vecOfElements.begin(), vecOfElements.end(), element);
+
+	if (it != vecOfElements.end())
+	{
+		result.second = distance(vecOfElements.begin(), it);
+		result.first = true;
+	}
+	else
+	{
+		result.first = false;
+		result.second = -1;
+	}
+
+	return result;
+}
 
 class Vehicle {
 protected:
@@ -49,12 +72,11 @@ public:
 
 	}
 	~Vehicle() {};
-	virtual void addVehicle() = 0;
+	//Dessa återfinns i de ärvande klasserna
+	virtual string getReg() = 0;
 	virtual void addVehicleAttributes() = 0;
-	virtual void getVehicle() = 0;
-	virtual void listVehicles() = 0;
-	virtual void removeVehicles() = 0;
 	virtual void printVehicleAttributes() = 0;
+	
 	
 };
 
@@ -71,6 +93,12 @@ public:
 	
 	Bicycle() {
 		
+		//Default för basklass
+		typeOfFuel="";
+		typeOfGearBox="";
+		regNr ="" ;
+		numberOfwheels=0;
+		//Specifikt för klassen
 		nameOfBrand = "";
 		color = "";
 		typeOfWheels = "";
@@ -78,6 +106,7 @@ public:
 		typeOfBike = "";
 		electric = "yes";
 	};
+	//Skall ej behövas för att köra programmet men går att använda för att lägga till som kontrollfunktion
 	Bicycle(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string typeOfBikeIn, bool electricIn) {
 		nameOfBrand = brandIn;
 		color = colorIn;
@@ -86,9 +115,9 @@ public:
 		typeOfBike = typeOfBikeIn;
 		electric = electricIn;
 	};
-
+	//Adding information to the Bicycle-object
 	void addVehicleAttributes() {
-		cout << "Enter nameOfBrand: " << endl;
+		/*cout << "Enter nameOfBrand: " << endl;
 		cin >> nameOfBrand;
 		cout << "Enter color: " << endl;
 		cin >> color;
@@ -100,13 +129,12 @@ public:
 		cin >> typeOfBike;
 		cout << "Enter if it is an electric-bike(yes/no): " << endl;
 		cin >> electric;
-		
-	};
-	void addVehicle() {
-		
-
+		*///test
+		cout << "Enter regnr: " << endl;
+		cin >> regNr;
 
 	};
+	
 	void printVehicleAttributes() {
 		cout << "\n";
 		cout << "Name:\t\t" << nameOfBrand << endl;
@@ -115,24 +143,14 @@ public:
 		cout << "Number of gears:" << numberOfGears << endl;
 		cout << "Type of bike:\t" << typeOfBike << endl;
 		cout << "Electric:\t" << electric << endl;
+		cout << "RegNr:\t" << regNr << endl;
 		cout << "\n";
 	
 	};
-
-	void getVehicle() {
-		cout << "sort vehicles" << endl;
-	};
-	void listVehicles() {
-		cout << "Choose a parameter to sort the list on" << endl;
-	};
-	void removeVehicles() {
-		cout << "Delete objekt of choice: " << endl;
-	};
-
+	string getReg() {
+		return regNr;
+	}
 	
-
-
-
 	~Bicycle() {};
 };
 
@@ -140,10 +158,15 @@ public:
 //Subklass Motorcykel
 class MotorCycle :public Vehicle {
 protected:
-	
+	int cc;
+
 public:
 	MotorCycle() {};
 	MotorCycle() {};
+	void addVehicleAttributes() {
+	}
+	void printVehicleAttributes(){
+	}
 	~MotorCycle() {};
 };
 //Subklass Bil
@@ -153,15 +176,23 @@ protected:
 public:
 	Car() {};
 	Car() {};
+	void addVehicleAttributes() {
+	}
+	void printVehicleAttributes() {
+	}
 	~Car() {};
 };
 //Subklass Bus
 class Bus :public Vehicle {
 protected:
-	
+int numberOfSeats;	
 public:
 	Bus() {};
 	Bus() {};
+	void addVehicleAttributes() {
+	}
+	void printVehicleAttributes() {
+	}
 	~Bus() {};
 };
 //Subklass Lastbil
@@ -171,6 +202,10 @@ protected:
 public:
 	Truck() {};
 	Truck() {};
+	void addVehicleAttributes() {
+	}
+	void printVehicleAttributes() {
+	}
 	~Truck() {};
 };
 */
@@ -182,8 +217,8 @@ protected:
 	int anyVehicle;
 	int numberOfVehicles;
 	Vehicle* myVehicle;
-
 	string nameOfGarage;
+	vector<Vehicle>::iterator it2;
 public:
 	vector <Vehicle*>myGarage;
 	Garage() {
@@ -213,6 +248,7 @@ public:
 			cout << "One bike it is! " << endl;
 			cout << "Please register your Bicycle: " << endl;
 			myVehicle->addVehicleAttributes();
+
 			break;
 		}
 		/*case 2: {
@@ -242,22 +278,42 @@ public:
 		cout << "Pushed back!" << endl;
 	}
 
-	//Prints the first element of the garage, WORKS!!!
-	void printVehicle() {
+	//Prints every element of the garage, WORKS!!!
+	void listVehicles() {
 		for  ( int i = 0; i < myGarage.size(); i++)
 		{
 			myGarage[i]->printVehicleAttributes();
 		}
-		
-		cout << "I printed a garage" << endl;
-		
+		cout << "I printed a garage!" << endl;
 	}
 
-	//Implement searchfunktion to compare 
-	void getVehicle() {
+	//Searchfunction to find a specific registrationnumber in the garage
+	int searchVehicle() {
 		
-	
+		cout << "Enter the regnr to search for: " << endl;
+		bool foundVehicle=0;
+		string input;
+		cin>>input;
+
+		for (auto i = 0; i != myGarage.size(); i++)
+		{
+			string regNr = myGarage[i]->getReg();	
+			if (regNr == input){
+				cout << "Found vehicle at parkingspot nr: " << i+1 << endl;
+				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
+				//returns the elementslot for the found object
+				return i;
+				foundVehicle = true;
+			}
+		}
+		//Exceptionhandling if other input than existing vehicle is given
+		if (foundVehicle == false) {
+			cout << "No vehicle with the selected registration was found" << endl;
+		}
+		return -1;
 	}
-	//virtual void listVehicles(Vehicle*test) = 0;
-	//virtual void removeVehicles(Vehicle*test) = 0;
+	
+	//virtual void listVehicles() = 0;
+	//virtual void removeVehicles() = 0;
+	//virtual void listTypeOfVehicles() = 0;
 };
