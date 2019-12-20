@@ -57,9 +57,9 @@ void Garage::addVehicleAttributes() {
 	}
 };
 //Returns the name of the garage
-//string Garage::nameOfGarage(string x){
-	//return x;
-//}
+string Garage::getNameOfGarage(){
+	return nameOfGarage;
+}
 //Adds a vehicle to the garage. WORKS!
 void Garage::addVehicle() {
 	myGarage.push_back(myVehicle);

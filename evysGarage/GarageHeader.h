@@ -35,7 +35,7 @@ public:
 		nameOfGarage = nameOfGarageIn;
 	};
 
-	string nameOfGarage(string x);
+	string getNameOfGarage();
 	//Här finns funktionen för hur fordonet skall läggas till
 	void addVehicleAttributes();
 

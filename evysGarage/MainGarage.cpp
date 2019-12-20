@@ -19,14 +19,13 @@ int main() {
 	cin >> choose;
 
 	do {
-		//Creation of garage-object
-		Garage* myNewGarage = new Garage();
-
+		
 		//Gives the garage a specific attribute-name
 		cout << "What would you like to call your garage?" << endl;
 		cin >> nameOfMyGarage;
-			
-		myNewGarage->nameOfGarage(nameOfMyGarage);
+		
+		//Creation of garage-object
+		Garage* myNewGarage = new Garage(nameOfMyGarage);
 
 		//How many Vehicles we would like to add to the garage
 		cout << "Enter the number of spaces you want in your garage: " << endl;
