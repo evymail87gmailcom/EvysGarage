@@ -24,21 +24,27 @@ int main() {
 		cout << "What would you like to call your garage?" << endl;
 		cin >> nameOfMyGarage;
 		
-		//Creation of garage-object
-		Garage* myNewGarage = new Garage(nameOfMyGarage);
+		
 
+		//Creation of garage-object per parameterized constructor
+		Garage* myNewGarage = new Garage(nameOfMyGarage);
+		
 		//How many Vehicles we would like to add to the garage
 		cout << "Enter the number of spaces you want in your garage: " << endl;
 		cin >> numberOfSpaces;
 		for (int i = 0; i < numberOfSpaces; i++)
 		{
-			//myNewGarage->addVehicleAttributes();
+			myNewGarage->addVehicleAttributes();
 			myNewGarage->addVehicle();
 		}
 
-		
+		//Prints the name of the garage
+		myNewGarage->printGarage();
 		myNewGarage->listVehicles();
-		//loop för sökning
+
+
+
+		//Searchmenu
 		cout << "Press 1 to Search for registrationnumbers in the garage" << endl;
 		cout << "Press 2 to Search for a specific color in the garage" << endl;
 		cout << "Press 3 to Search for number of wheels in the garage" << endl;
@@ -57,7 +63,22 @@ int main() {
 			cout << "Do you wish to do another search, press 1 Or to get back to the searchmenu press 0" << endl;
 			cin >> choose;
 			} while (choose == true);
-			//break;
+		}
+		case 2: {
+			do {
+			myNewGarage->searchColor();
+			cout << "Do you wish to do another search, press 1 Or to get back to the searchmenu press 0" << endl;
+			cin >> choose;
+		} while (choose == true);
+		}
+		case 3: {
+
+		}
+		case 4: {
+
+		}
+		case 5: {
+
 		}
 		default:
 			break;

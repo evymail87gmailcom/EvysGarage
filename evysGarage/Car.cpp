@@ -2,10 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//Returns registrationnumber
-string Car::getReg() {
-	return regNr;
-}
+
 //Adding information to the Bicycle-object
 void Car::addVehicleAttributes() {
 	cout << "Enter nameOfBrand: ";
@@ -35,4 +32,11 @@ void Car::printVehicleAttributes() {
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
 
+}
+//Returns registration,color,nrofwheels,nrofseats,rooftype
+string Car::getReg() {
+	return regNr;
+}
+string Car::getColor() {
+	return color;
 }

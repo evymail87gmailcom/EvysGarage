@@ -100,6 +100,32 @@ int Garage::searchRegistrationNumber() {
 	}
 	return -1;
 }
+//Searchfunction to find a specific color in the garage, Works!!
+int Garage::searchColor() {
+
+	cout << "Enter the color to search for: " << endl;
+	bool foundVehicle = 0;
+	string input;
+	cin >> input;
+
+	for (auto i = 0; i != myGarage.size(); i++)
+	{
+		string color = myGarage[i]->getColor();
+		if (color == input) {
+			cout << "Found a "<<color<<" vehicle at parkingspot nr: " << i + 1 << endl;
+			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
+			//returns the elementslot for the found object
+			return i;
+			foundVehicle = true;
+			continue;
+		}
+	}
+	//Exceptionhandling if other input than existing vehicle is given
+	if (foundVehicle == false) {
+		cout << "No vehicle with the selected registration was found" << endl;
+	}
+	return -1;
+}
 
 //Prints every type of vehicle and how many of them there are in the garage, WORKS! 
 void Garage::listTypeOfVehicles() {
@@ -110,5 +136,9 @@ void Garage::listTypeOfVehicles() {
 	cout << "Trucks:\t\t\t" << truckCounter << endl;
 	cout << "Motorcycles:\t\t" << motorCycleCounter << endl;
 	cout << "Bus:\t\t\t" << busCounter << endl;
+}
+//Prints the name of the garage
+void Garage::printGarage() {
+	cout <<"Contents of garage: " <<nameOfGarage<< ": "<< endl;
 }
 //virtual void removeVehicles() = 0;

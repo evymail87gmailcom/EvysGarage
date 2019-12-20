@@ -31,13 +31,14 @@ public:
 		numberOfSeats = numberOfSeatsIn;
 		regNr = regNrIn;
 	};
-	//Returns registrationnumber
-	string getReg();
 	//Adding information to the Bus-object
 	void addVehicleAttributes();
 	//Prints the information added
 	void printVehicleAttributes();
 
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	string getReg();
+	string getColor();
 	~Bus() {};
 };
 

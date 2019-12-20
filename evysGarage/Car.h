@@ -31,14 +31,16 @@ public:
 		numberOfGears = numberOfGearsIn;
 		roofType = roofTypeIn;
 	};
-	//Returns registrationnumber
-	string getReg();
 	
 	//Adding information to the Bicycle-object
 	void addVehicleAttributes();
 
 	//Prints the information added
 	void printVehicleAttributes();
+
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	string getReg();
+	string getColor();
 
 	~Car() {};
 };

@@ -2,10 +2,7 @@
 #include <iostream>
 using namespace std;
 
-//Returns registrationnumber
-string Truck::getReg() {
-	return regNr;
-}
+
 //Adding information to the Truck-object
 void Truck::addVehicleAttributes() {
 	cout << "Enter nameOfBrand: ";
@@ -29,4 +26,11 @@ void Truck::printVehicleAttributes() {
 	cout << "Axelconfiguration:" << axelConfiguration << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
+}
+//Returns registration,color,nrofwheels,nrofseats,rooftype
+string Truck::getReg() {
+	return regNr;
+}
+string Truck::getColor() {
+	return regNr;
 }

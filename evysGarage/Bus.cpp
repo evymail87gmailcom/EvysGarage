@@ -2,10 +2,6 @@
 #include <iostream>
 using namespace std;
 
-//Returns registrationnumber
-string Bus::getReg() {
-	return regNr;
-}
 //Adding information to the Bus-object
 void Bus::addVehicleAttributes() {
 	cout << "Enter nameOfBrand: ";
@@ -32,4 +28,11 @@ void Bus::printVehicleAttributes() {
 	cout << "Number of seats:" << numberOfSeats << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
+}
+//Returns registration,color,nrofwheels,nrofseats,rooftype
+string Bus::getReg() {
+	return regNr;
+}
+string Bus::getColor() {
+	return color;
 }

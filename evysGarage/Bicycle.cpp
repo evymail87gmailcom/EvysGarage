@@ -28,7 +28,10 @@ void Bicycle::printVehicleAttributes() {
 	cout << "Electric:\t" << electric << endl;
 	cout << "\n";
 }
-//Returns registrationnumber
+//Returns registration,color,nrofwheels,nrofseats,rooftype
 string Bicycle::getReg() {
 	return regNr;
+}
+string Bicycle::getColor() {
+	return color;
 }

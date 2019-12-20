@@ -40,6 +40,7 @@ public:
 	~Vehicle() {};
 	//Dessa återfinns i de ärvande klasserna
 	virtual string getReg() = 0;
+	virtual string getColor() = 0;
 	virtual void addVehicleAttributes() = 0;
 	virtual void printVehicleAttributes() = 0;
 

@@ -42,9 +42,9 @@ public:
 	//Prints the information added
 	void printVehicleAttributes();
 
-	//Returns 
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
 	string getReg();
-
+	string getColor();
 	~Bicycle() {};
 };
 

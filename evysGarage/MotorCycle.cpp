@@ -29,7 +29,10 @@ void MotorCycle::printVehicleAttributes() {
 	cout << "\n";
 
 }
-//Returns registrationnumber
+//Returns registration,color,nrofwheels,nrofseats,rooftype
 string MotorCycle::getReg() {
 	return regNr;
+}
+string MotorCycle::getColor() {
+	return color;
 }
