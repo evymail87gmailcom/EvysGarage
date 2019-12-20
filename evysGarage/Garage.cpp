@@ -56,7 +56,10 @@ void Garage::addVehicleAttributes() {
 		break;
 	}
 };
-
+//Returns the name of the garage
+//string Garage::nameOfGarage(string x){
+	//return x;
+//}
 //Adds a vehicle to the garage. WORKS!
 void Garage::addVehicle() {
 	myGarage.push_back(myVehicle);
@@ -73,7 +76,7 @@ void Garage::listVehicles() {
 }
 
 //Searchfunction to find a specific registrationnumber in the garage, Works!!
-int Garage::searchVehicle() {
+int Garage::searchRegistrationNumber() {
 
 	cout << "Enter the regnr to search for: " << endl;
 	bool foundVehicle = 0;
@@ -97,8 +100,10 @@ int Garage::searchVehicle() {
 	}
 	return -1;
 }
+
 //Prints every type of vehicle and how many of them there are in the garage, WORKS! 
 void Garage::listTypeOfVehicles() {
+	cout << "Name of garage" << nameOfGarage << endl;
 	cout << "Type of vehicle:\t" << "Number of vehicles:\t" << endl;
 	cout << "Bicycles:\t\t" << bicycleCounter << endl;
 	cout << "Cars:\t\t\t" << carCounter << endl;

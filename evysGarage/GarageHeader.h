@@ -16,9 +16,9 @@ protected:
 	int anyVehicle;
 	int numberOfVehicles;
 	Vehicle* myVehicle;
-	string nameOfGarage;
 	vector<Vehicle>::iterator it2;
 public:
+	string nameOfGarage;
 	int bicycleCounter = 0;
 	int carCounter = 0;
 	int truckCounter = 0;
@@ -35,7 +35,7 @@ public:
 		nameOfGarage = nameOfGarageIn;
 	};
 
-
+	string nameOfGarage(string x);
 	//Här finns funktionen för hur fordonet skall läggas till
 	void addVehicleAttributes();
 
@@ -46,7 +46,7 @@ public:
 	void listVehicles();
 
 	//Searchfunction to find a specific registrationnumber in the garage, Works!!
-	int searchVehicle();
+	int searchRegistrationNumber();
 
 	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
 	void listTypeOfVehicles();
