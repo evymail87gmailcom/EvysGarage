@@ -25,7 +25,8 @@ public:
 		typeOfWheels = "";
 		numberOfGears = 0;
 		typeOfBike = "";
-		electric = "yes";
+		electric = "Unknown";
+		typeOfVehicle = "Bicycle";
 	};
 	//Skall ej behövas för att köra programmet men går att använda för att lägga till som kontrollfunktion
 	Bicycle(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string typeOfBikeIn, bool electricIn) {

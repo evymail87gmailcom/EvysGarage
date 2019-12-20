@@ -22,7 +22,7 @@ public:
 		typeOfWheels = "";
 		numberOfGears = 0;
 		roofType = "";
-	
+		typeOfVehicle = "Car";
 	};
 	Car(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string roofTypeIn) {
 		nameOfBrand = brandIn;

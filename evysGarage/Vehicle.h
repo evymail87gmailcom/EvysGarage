@@ -12,6 +12,7 @@ protected:
 	string typeOfWheels;
 	string typeOfGearBox;
 	string regNr;
+	string typeOfVehicle;
 	int numberOfwheels;
 	int numberOfGears;
 
@@ -25,8 +26,9 @@ public:
 		regNr = "";
 		numberOfwheels = 0;
 		numberOfGears = 0;
+		typeOfVehicle="";
 	}
-	Vehicle(string colorIn, string brandIn, string fuelIn, string regIn, int numberOfGearsIn, string wheelsIn, string typeOfGearBoxIn, int numberOfWheelsIn) {
+	Vehicle(string colorIn, string brandIn, string fuelIn, string regIn, int numberOfGearsIn, string wheelsIn, string typeOfGearBoxIn, int numberOfWheelsIn,string typeOfVehicleIn) {
 		nameOfBrand = brandIn;
 		color = colorIn;
 		typeOfFuel = fuelIn;
@@ -35,7 +37,7 @@ public:
 		regNr = regIn;
 		numberOfwheels = numberOfWheelsIn;
 		numberOfGears = numberOfGearsIn;
-
+		typeOfVehicle = typeOfVehicleIn;
 	}
 	~Vehicle() {};
 	//Dessa återfinns i de ärvande klasserna

@@ -22,6 +22,7 @@ public:
 		typeOfWheels = "";
 		numberOfGears = 0;
 		numberOfSeats = 0;
+		typeOfVehicle = "Bus";
 	};
 	Bus(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, int numberOfSeatsIn,string regNrIn) {
 		nameOfBrand = brandIn;

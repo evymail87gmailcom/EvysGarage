@@ -22,7 +22,7 @@ void Car::addVehicleAttributes() {
 }
 //Prints the information added
 void Car::printVehicleAttributes() {
-	cout << "\n";
+	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
 	cout << "Type of wheels:\t" << typeOfWheels << endl;

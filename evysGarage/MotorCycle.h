@@ -25,6 +25,7 @@ public:
 		typeOfWheels = "";
 		numberOfGears = 0;
 		cc = 0;
+		typeOfVehicle = "Motorcycle";
 	};
 	MotorCycle(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, int ccIn,string regNrIn) {
 		nameOfBrand = brandIn;

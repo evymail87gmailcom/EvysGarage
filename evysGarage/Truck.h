@@ -22,6 +22,7 @@ public:
 		typeOfWheels = "";
 		numberOfGears = 0;
 		axelConfiguration = "";
+		typeOfVehicle = "Truck";
 	};
 	Truck(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string axelConfigurationIn) {
 		nameOfBrand = brandIn;
