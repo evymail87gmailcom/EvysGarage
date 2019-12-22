@@ -6,6 +6,7 @@
 #include"MotorCycle.h"
 #include"Truck.h"
 #include<iostream>
+#include<algorithm>
 #include<string>
 #include<vector>
 
@@ -15,7 +16,7 @@ class Garage {
 protected:
 	int anyVehicle;
 	Vehicle* myVehicle;
-
+	
 public:
 	string nameOfGarage;
 	int bicycleCounter = 0;
@@ -25,6 +26,8 @@ public:
 	int busCounter = 0;
 	vector <Vehicle*>myGarage;
 	int numberOfVehicles=0;
+	vector<Vehicle*>::iterator it;
+	bool foundVehicle = 0;
 	Garage() {
 		anyVehicle = 0;
 		numberOfVehicles = 0;
@@ -34,8 +37,8 @@ public:
 		nameOfGarage = nameOfGarageIn;
 	};
 	
-
-
+	void removeVehicle(Vehicle* x);
+	
 	string getNameOfGarage();
 	//Här finns funktionen för hur fordonet skall läggas till
 	void addVehicleAttributes();
@@ -50,13 +53,16 @@ public:
 	int searchRegistrationNumber();
 
 	int searchColor();
+	int searchVehicleType();
 
 	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
 	void listTypeOfVehicles();
 	
 	//Prints the name of the garage
-	void printGarage();
+	void printGarage(int numberofSpots);
 
-	//virtual void removeVehicles() = 0;
+	//Submenu for removevehicle main-choice
+	void removeVehicle();
+	
 
 };

@@ -36,3 +36,6 @@ string MotorCycle::getReg() {
 string MotorCycle::getColor() {
 	return color;
 }
+string MotorCycle::getTypeofVehicle() {
+	return typeOfVehicle;
+}

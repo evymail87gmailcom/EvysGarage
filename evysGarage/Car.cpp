@@ -40,3 +40,6 @@ string Car::getReg() {
 string Car::getColor() {
 	return color;
 }
+string Car::getTypeofVehicle() {
+	return typeOfVehicle;
+}

@@ -36,3 +36,6 @@ string Bus::getReg() {
 string Bus::getColor() {
 	return color;
 }
+string Bus::getTypeofVehicle() {
+	return typeOfVehicle;
+}

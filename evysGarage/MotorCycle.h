@@ -45,6 +45,7 @@ public:
 	//Returns registration,color,nrofwheels,nrofseats,rooftype
 	string getReg();
 	string getColor();
+	string getTypeofVehicle();
 	~MotorCycle() {};
 };
 

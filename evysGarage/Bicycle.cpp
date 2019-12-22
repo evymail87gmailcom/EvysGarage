@@ -35,3 +35,6 @@ string Bicycle::getReg() {
 string Bicycle::getColor() {
 	return color;
 }
+string Bicycle::getTypeofVehicle() {
+	return typeOfVehicle;
+}
