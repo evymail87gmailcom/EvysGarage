@@ -5,6 +5,7 @@ using namespace std;
 
 //Adding information to the Bicycle-object
 void Car::addVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Enter nameOfBrand: ";
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
@@ -19,9 +20,11 @@ void Car::addVehicleAttributes() {
 	cin >> roofType;
 	cout << "Enter regnr: ";
 	cin >> regNr;
+	cout << "--------------------------------------------------------------" << endl;
 }
 //Prints the information added
 void Car::printVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
@@ -31,6 +34,7 @@ void Car::printVehicleAttributes() {
 	cout << "Fueltype:\t" << typeOfFuel << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
+	cout << "--------------------------------------------------------------" << endl;
 
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype

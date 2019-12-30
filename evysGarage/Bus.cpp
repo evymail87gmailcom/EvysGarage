@@ -4,6 +4,7 @@ using namespace std;
 
 //Adding information to the Bus-object
 void Bus::addVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Enter nameOfBrand: ";
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
@@ -16,10 +17,12 @@ void Bus::addVehicleAttributes() {
 	cin >> numberOfSeats;
 	cout << "Enter regnr: ";
 	cin >> regNr;
+	cout << "--------------------------------------------------------------" << endl;
 
 }
 //Prints the information added
 void Bus::printVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
@@ -28,6 +31,7 @@ void Bus::printVehicleAttributes() {
 	cout << "Number of seats:" << numberOfSeats << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
+	cout << "--------------------------------------------------------------" << endl;
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype
 string Bus::getReg() {

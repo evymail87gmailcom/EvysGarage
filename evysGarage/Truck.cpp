@@ -5,6 +5,7 @@ using namespace std;
 
 //Adding information to the Truck-object
 void Truck::addVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Enter nameOfBrand: ";
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
@@ -15,9 +16,11 @@ void Truck::addVehicleAttributes() {
 	cin >> axelConfiguration;
 	cout << "Enter regnr: ";
 	cin >> regNr;
+	cout << "--------------------------------------------------------------" << endl;
 }
 //Prints the information added
 void Truck::printVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
@@ -26,6 +29,7 @@ void Truck::printVehicleAttributes() {
 	cout << "Axelconfiguration:" << axelConfiguration << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
+	cout << "--------------------------------------------------------------" << endl;
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype
 string Truck::getReg() {

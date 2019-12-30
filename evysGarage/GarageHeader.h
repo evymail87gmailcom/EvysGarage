@@ -16,7 +16,7 @@ class Garage {
 protected:
 	int anyVehicle;
 	Vehicle* myVehicle;
-	
+
 public:
 	string nameOfGarage;
 	int bicycleCounter = 0;
@@ -25,7 +25,7 @@ public:
 	int motorCycleCounter = 0;
 	int busCounter = 0;
 	vector <Vehicle*>myGarage;
-	int numberOfVehicles=0;
+	int numberOfVehicles = 0;
 	vector<Vehicle*>::iterator it;
 	bool foundVehicle = 0;
 	Garage() {
@@ -36,11 +36,15 @@ public:
 	Garage(string nameOfGarageIn) {
 		nameOfGarage = nameOfGarageIn;
 	};
-	
-	void removeVehicle(Vehicle* x);
-	
+
+	//submenu for removing vehicles
+	void removeVehicle();
+
+	int getSizeOfGarage();
+
 	string getNameOfGarage();
-	//Här finns funktionen för hur fordonet skall läggas till
+
+	//Function to add specifik vehicle attributes
 	void addVehicleAttributes();
 
 	//Adds a vehicle to the garage. WORKS!
@@ -50,19 +54,19 @@ public:
 	void listVehicles();
 
 	//Searchfunction to find a specific registrationnumber in the garage, Works!!
-	int searchRegistrationNumber();
+	void searchRegistrationNumber();
 
-	int searchColor();
-	int searchVehicleType();
+	void searchColor();
+	void searchVehicleType();
 
 	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
 	void listTypeOfVehicles();
-	
+
 	//Prints the name of the garage
 	void printGarage(int numberofSpots);
 
-	//Submenu for removevehicle main-choice
-	void removeVehicle();
-	
-
+	void addDefaultGarage();
+	int addGarage();
+	void searchMenu();
+	void editGarage();
 };

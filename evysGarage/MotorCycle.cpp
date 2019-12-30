@@ -4,6 +4,7 @@ using namespace std;
 
 //Adding information to the Motorcycle-object
 void MotorCycle::addVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Enter nameOfBrand: ";
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
@@ -16,9 +17,11 @@ void MotorCycle::addVehicleAttributes() {
 	cin >> cc;
 	cout << "Enter regnr: ";
 	cin >> regNr;
+	cout << "--------------------------------------------------------------" << endl;
 }
 //Prints the information added
 void MotorCycle::printVehicleAttributes() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
@@ -27,6 +30,7 @@ void MotorCycle::printVehicleAttributes() {
 	cout << "CC:\t\t" << cc << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
+	cout << "--------------------------------------------------------------" << endl;
 
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype
