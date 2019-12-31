@@ -56,24 +56,7 @@ void Garage::addVehicleAttributes() {
 		break;
 	}
 };
-int Garage::addGarage() {
-	cout << "--------------------------------------------------------------" << endl;
-	//Gives the garage a specific attribute-name
-	cout << "What would you like to call your garage?" << endl;
-	cin >> nameOfGarage;
-	//Creation of garage-object per parameterized constructor
-	Garage* myNewGarage = new Garage(nameOfGarage);
-	//How many Vehicles we would like to add to the garage
-	cout << "Enter the number of spaces you want in your garage: " << endl;
-	cin >> numberOfVehicles;
-	return numberOfVehicles;
-	cout << "--------------------------------------------------------------" << endl;
-	system("cls");
 
-	printGarage(numberOfVehicles);
-	editGarage();
-
-}
 //------------------------------------------------------------------------------------------------------------------------------------
 void Garage::addDefaultGarage() {
 	myVehicle = new Car("Blue", "Volvo", 5, "AYR", "Solar");
@@ -281,26 +264,29 @@ void Garage::removeVehicle() {
 //------------------------------------------------------------------------------------------------------------------------------------
 //Submenu for handling the garage
 void Garage::editGarage() {
-	int editMenuChoice = 0;
+	int editMenuChoice;
 	bool editGaragechoose;
-	do {
+	
 
 		cout << "1 to add Vehicles to your garage" << endl;
 		cout << "2 to see a list of the Vehicles." << endl;
 		cout << "3 to remove Vehicles from the garage" << endl;
 		cout << "4 to search Vehicles to your garage" << endl;
 		cin >> editMenuChoice;
+
 		switch (editMenuChoice)
 		{
 		case 1: {
-			for (int i = 0; i < numberOfVehicles; i++)
+			for (int i = 0; i <= numberOfVehicles; i++)
 			{
 
-				myVehicle->addVehicleAttributes();
+				addVehicleAttributes();
 				addVehicle();
+				
 			}
 			break;
 		}
+			 
 		case 2: {
 			listVehicles();
 			break;
@@ -318,9 +304,9 @@ void Garage::editGarage() {
 		default:
 			break;
 		}
-		cout << "Would you like to edit your garage? yes=1/no=0" << endl;
-		cin >> editGaragechoose;
-	} while (editGaragechoose == true);
+		//cout << "Would you like to edit your garage? yes=1/no=0" << endl;
+		//cin >> editGaragechoose;
+	
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 //Searchmenu
@@ -375,5 +361,23 @@ void Garage::searchMenu() {
 		cout << "Would you like to add another garage to your collection? yes=1/no=0" << endl;
 		cin >> choose;
 	} while (choose == true);
+
+}
+
+int Garage::addGarage() {
+	cout << "--------------------------------------------------------------" << endl;
+	//Gives the garage a specific attribute-name
+	cout << "What would you like to call your garage?" << endl;
+	cin >> nameOfGarage;
+	//Creation of garage-object per parameterized constructor
+	Garage* myNewGarage = new Garage(nameOfGarage);
+	//How many Vehicles we would like to add to the garage
+	cout << "Enter the number of spaces you want in your garage: " << endl;
+	cin >> numberOfVehicles;
+	return numberOfVehicles;
+	cout << "--------------------------------------------------------------" << endl;
+	system("cls");
+
+
 
 }
