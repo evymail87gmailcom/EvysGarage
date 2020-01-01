@@ -31,3 +31,6 @@ Function: AddGarage-to manually add a garage
 Function: DefaultGarage- Instantiation of a defaultgarage to show UI-functions
 -Add a function that prints the element where the vehicle is parked.
 -Create a function to print extended attributes for more information about the vehicles.
+
+Possible solution and further developement:
+-Make a new class for the Admin, this might make it easier to 

@@ -34,7 +34,7 @@ string Truck::getReg() {
 	return regNr;
 }
 string Truck::getColor() {
-	return regNr;
+	return color;
 }
 string Truck::getTypeofVehicle() {
 	return typeOfVehicle;

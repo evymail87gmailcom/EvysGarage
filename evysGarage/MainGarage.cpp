@@ -9,7 +9,7 @@ int main() {
 
 	Garage start;
 	start.startPogram();
-
+	
 	cout << "Program ended without errors" << endl;
 	return 0;
 }

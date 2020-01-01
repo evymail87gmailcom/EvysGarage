@@ -13,7 +13,7 @@
 using namespace std;
 
 class Garage {
-protected:
+private:
 	int anyVehicle;
 	Vehicle* myVehicle;
 	vector <Vehicle*>myGarage;
@@ -25,8 +25,8 @@ protected:
 	int busCounter = 0;
 	int numberOfVehicles = 0;
 	string getNameOfGarage();
-	Garage* myNewGarage;
-	vector<Garage*> myNewGarageVector;
+	Garage* myMainGarage;
+	vector<Garage*> myMainGarageVector;
 	//submenu for removing vehicles
 	void removeVehicle();
 
