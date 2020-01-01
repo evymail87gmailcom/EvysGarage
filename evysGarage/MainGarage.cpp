@@ -16,7 +16,7 @@ int main() {
 	
 	
 
-	//Mainmenu-Chooses wheter to create a garage or not
+	//Mainmenu-Chooses wether to create a garage or not
 	cout << "Welcome!" << endl;
 	int chooseGarage = 0;
 	

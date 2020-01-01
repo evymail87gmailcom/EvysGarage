@@ -47,8 +47,6 @@ protected:
 	void searchColor();
 	void searchVehicleType();
 
-
-
 	//Prints the name of the garage
 	void printGarageNameAndSpots(int numberofSpots);
 	void searchMenu();
