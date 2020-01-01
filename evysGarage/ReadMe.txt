@@ -4,8 +4,8 @@ Create a Garageapplication that holds a number of vehicles and simulates functio
 Need-to-have for the assignment:
 
 Classes:
-An abstract baseklass, Vehicle, to be inherited by subclasses Car, Bicycle, Motorcycle, Truck and Bus.KLAR
-A garageclass that holds the functionality of the garage and an array of Vehicles.KLAR
+An abstract baseklass, Vehicle, to be inherited by subclasses Car, Bicycle, Motorcycle, Truck and Bus.
+A garageclass that holds the functionality of the garage and an array of Vehicles.
 
 FUNCTIONS:
 ListVehicles-prints all vehicles in the garage.
@@ -13,8 +13,8 @@ ListTypeOfVehicles- prints all vehicletypes and how many of them there are in th
 AddVehicle-Adds a vehicle to the garage.
 RemoveVehicle-removes a vehicle from the garage.
 MaxVehicles-have a maximum limit of parkingspots when instantiating a new garage.
-SearchVehicle- search for registrationnumber.KLAR
-Extended searchfunction to search for other paremetres.KLAR
+SearchVehicle- search for registrationnumber.
+Extended searchfunction to search for other paremetres.
 
 
 
@@ -23,9 +23,8 @@ Extended searchfunction to search for other paremetres.KLAR
 Functiontesting:
 
 Function: AddGarage-to manually add a garage
--When exiting searchmenu alternative is given for changing searchcriteria, remove or reloate option.
 -When adding a new garage, the name and number of parkingspots is overwritten and any new vehicle is added to the existing collection. 
-
+-If one adds 2 out of 3 vehicles the last place in the vector is duplicated by the last entry.
 
 
 

@@ -245,8 +245,7 @@ void Garage::removeVehicle() {
 			if (regNr == input) {
 				cout << "Found vehicle at element: " << i << endl;
 				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
-				//returns the elementslot for the found object
-
+			
 				foundVehicle = true;
 				//Extra safety
 				cout << "Are you sure you want to remove vehicle from garage?" << endl;
@@ -318,7 +317,7 @@ void Garage::editGarage() {
 			break;
 		}
 	
-		system("cls");
+		//system("cls");
 
 	} while (editMenuChoice!=0);
 }
