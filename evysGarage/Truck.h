@@ -9,6 +9,7 @@ using namespace std;
 class Truck :public Vehicle {
 protected:
 	string axelConfiguration;
+
 	//Adding information to the Truck-object
 	void addVehicleAttributes();
 
@@ -21,12 +22,11 @@ protected:
 	string getTypeofVehicle();
 public:
 	Truck() {
-		//Default för basklass
+		
 		typeOfFuel = "";
 		typeOfGearBox = "";
 		regNr = "";
 		numberOfwheels = 0;
-		//Specifikt för klassen
 		nameOfBrand = "";
 		color = "";
 		typeOfWheels = "";

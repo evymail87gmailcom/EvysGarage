@@ -95,7 +95,7 @@ void Garage::addDefaultGarage() {
 	nameOfGarage = "DefaultGarage";
 	numberOfVehicles = 10;
 	printGarageNameAndSpots(numberOfVehicles);
-	//delete myVehicle;
+
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 //Returns the name of the garage
@@ -286,7 +286,6 @@ void Garage::editGarage() {
 		cout << "0 to exit the editmenu" << endl;
 		cin >> editMenuChoice;
 		system("cls");
-
 
 		switch (editMenuChoice)
 		{

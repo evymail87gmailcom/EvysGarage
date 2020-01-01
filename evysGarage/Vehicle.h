@@ -40,7 +40,7 @@ public:
 		typeOfVehicle = typeOfVehicleIn;
 	}
 	~Vehicle() {};
-	//Dessa återfinns i de ärvande klasserna
+	//Needs to be public to be accessed in the inheriting classes
 	virtual string getReg() = 0;
 	virtual string getColor() = 0;
 	virtual string getTypeofVehicle() = 0;

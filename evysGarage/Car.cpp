@@ -35,7 +35,7 @@ void Car::printVehicleAttributes() {
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
 }
-//Returns registration,color,nrofwheels,nrofseats,rooftype
+//Returns registration,color,type of vehicle
 string Car::getReg() {
 	return regNr;
 }

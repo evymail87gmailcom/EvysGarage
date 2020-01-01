@@ -14,18 +14,17 @@ protected:
 	//Prints the information added
 	void printVehicleAttributes();
 
-	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	//Returns registration,color,type of vehicle
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();
 public:
 	Bus() {
-		//Default för basklass
+		
 		typeOfFuel = "";
 		typeOfGearBox = "";
 		regNr = "";
 		numberOfwheels = 0;
-		//Specifikt för klassen
 		nameOfBrand = "";
 		color = "";
 		typeOfWheels = "";
