@@ -10,7 +10,7 @@ void Car::addVehicleAttributes() {
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
 	cin >> color;
-	cout << "Enter typeOfWheels(Summer/Winter): ";
+	cout << "Enter typeOfWheels(Summer/Winter/AYR): ";
 	cin >> typeOfWheels;
 	cout << "Enter type of gearbox: ";
 	cin >> typeOfGearBox;
@@ -34,8 +34,6 @@ void Car::printVehicleAttributes() {
 	cout << "Fueltype:\t" << typeOfFuel << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
-	cout << "--------------------------------------------------------------" << endl;
-
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype
 string Car::getReg() {

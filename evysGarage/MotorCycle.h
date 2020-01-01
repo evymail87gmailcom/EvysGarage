@@ -27,13 +27,14 @@ public:
 		cc = 0;
 		typeOfVehicle = "Motorcycle";
 	};
-	MotorCycle(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, int ccIn,string regNrIn) {
+	MotorCycle(string colorIn, string brandIn, string typeOfWheelsIn, int ccIn,string regNrIn,string typeOfFuelIn) {
 		nameOfBrand = brandIn;
 		color = colorIn;
-		typeOfWheels = wheelsIn;
-		numberOfGears = numberOfGearsIn;
+		typeOfWheels = typeOfWheelsIn;
 		cc = ccIn;
 		regNr = regNrIn;
+		typeOfVehicle = "Motorcycle";
+		typeOfFuel = typeOfFuelIn;
 	};
 	
 	//Adding information to the Motorcycle-object

@@ -24,11 +24,12 @@ public:
 		axelConfiguration = "";
 		typeOfVehicle = "Truck";
 	};
-	Truck(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string axelConfigurationIn) {
+	Truck(string brandIn, string regNrIn,string colorIn, string axelConfigurationIn,int numberOfWheelsIn) {
+		typeOfVehicle = "Truck";
 		nameOfBrand = brandIn;
+		regNr = regNrIn;
 		color = colorIn;
-		typeOfWheels = wheelsIn;
-		numberOfGears = numberOfGearsIn;
+		numberOfwheels = numberOfWheelsIn;
 		axelConfiguration = axelConfigurationIn;
 	};
 
@@ -38,7 +39,7 @@ public:
 	//Prints the information added
 	void printVehicleAttributes();
 	
-	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	//Returns registration,color,vehicletype
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();

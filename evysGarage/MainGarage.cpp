@@ -7,22 +7,25 @@ using namespace std;
 //UI
 int main() {
 	
-	int numberOfSpaces = 0;
+
 	string nameOfMyGarage;
 	vector <Garage*> myGarageVector;
-	bool choose = "y";
-	int chooseGarage = 0;
-	
 	Garage* myNewGarage = new Garage(nameOfMyGarage);
+	bool choose = "y";
+	
+	
+	
 
 	//Mainmenu-Chooses wheter to create a garage or not
 	cout << "Hello!" << endl;
 
-	while (true) {
+	
 		do {
+			int chooseGarage = 0;
 			cout << "--------------------------------------------------------------" << endl;
 			cout << "Press 1 to add a new garage to your collection?" << endl;
 			cout << "Press 2 to use a default garage" << endl;
+			cout << "Press 3 to list all existing garages" << endl;
 			cout << "--------------------------------------------------------------" << endl;
 			cin >> chooseGarage;
 			system("cls");
@@ -31,10 +34,9 @@ int main() {
 			{
 				//Manually adds a Garage
 			case 1: {
-
+				
 				myNewGarage->addGarage();
-				myNewGarage->editGarage();
-				myNewGarage->printGarage(numberOfSpaces);
+				myGarageVector.push_back(myNewGarage);
 				break;
 			}
 
@@ -42,26 +44,35 @@ int main() {
 			case 2: {
 				myNewGarage->addDefaultGarage();
 				myNewGarage->editGarage();
+				myGarageVector.push_back(myNewGarage);
+				break;
+			}
+			case 3: {//Only prints the last garage Make a function
+			
+			
+					//myNewGarage->printGarageNameAndSpots();
+					//myGarageVector[0]->listVehicles();
+					//myGarageVector[1]->listVehicles();
+					//myNewGarage->listVehicles();
 
+				
 			}
 			default:
 				break;
 
 			}
-			//Adds the garage to a greater collection of garages when the basic garageattributes are given. Replaces the garage at element 0 with the next garage
-			myGarageVector.push_back(myNewGarage);
-
-
-
+			
+			
 			cout << "Number of garages in the company " << myGarageVector.size() << endl;
+			myNewGarage->listTypeOfVehicles();
+			cout << "Do you wish to return to Main Menu? Yes = 1/ No=0" << endl;
+			cin >> choose;
+			system("cls");
+		} while (choose == 1);
 
-
-
-
-		} while (choose == true);
-
-
-	}
+	
+	
+		delete myNewGarage;
 }
 
 

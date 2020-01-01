@@ -28,11 +28,12 @@ public:
 		electric = "Unknown";
 		typeOfVehicle = "Bicycle";
 	};
-	//Skall ej behövas för att köra programmet men går att använda för att lägga till som kontrollfunktion
-	Bicycle(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string typeOfBikeIn, bool electricIn) {
+	//To add a default-bike
+	Bicycle(string brandIn, string colorIn, int numberOfGearsIn, string typeOfWheelsIn, string typeOfBikeIn, string electricIn) {
+		typeOfVehicle = "Bicycle";
 		nameOfBrand = brandIn;
 		color = colorIn;
-		typeOfWheels = wheelsIn;
+		typeOfWheels = typeOfWheelsIn;
 		numberOfGears = numberOfGearsIn;
 		typeOfBike = typeOfBikeIn;
 		electric = electricIn;

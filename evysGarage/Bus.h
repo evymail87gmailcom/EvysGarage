@@ -24,12 +24,11 @@ public:
 		numberOfSeats = 0;
 		typeOfVehicle = "Bus";
 	};
-	Bus(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, int numberOfSeatsIn,string regNrIn) {
+	Bus(string brandIn, string colorIn, int numberOfSeatsIn,string regNrIn) {
 		nameOfBrand = brandIn;
 		color = colorIn;
-		typeOfWheels = wheelsIn;
-		numberOfGears = numberOfGearsIn;
 		numberOfSeats = numberOfSeatsIn;
+		typeOfVehicle = "Bus";
 		regNr = regNrIn;
 	};
 	//Adding information to the Bus-object

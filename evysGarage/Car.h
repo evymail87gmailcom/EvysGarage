@@ -11,12 +11,12 @@ protected:
 	string roofType;
 public:
 	Car() {
-		//Default för basklass
+		//Baseclass specific attributes
 		typeOfFuel = "";
 		typeOfGearBox = "";
 		regNr = "";
 		numberOfwheels = 0;
-		//Specifikt för klassen
+		//Classspecific attributes
 		nameOfBrand = "";
 		color = "";
 		typeOfWheels = "";
@@ -24,11 +24,15 @@ public:
 		roofType = "";
 		typeOfVehicle = "Car";
 	};
-	Car(string colorIn, string brandIn, int numberOfGearsIn, string wheelsIn, string roofTypeIn) {
+	Car(string brandIn,string regNrIn, string colorIn,  string typeOfGearBoxIn , string typeOfWheelsIn, string typeOfFuelIn, string roofTypeIn) {
 		nameOfBrand = brandIn;
+		regNr = regNrIn;
 		color = colorIn;
-		typeOfWheels = wheelsIn;
-		numberOfGears = numberOfGearsIn;
+		typeOfWheels = typeOfWheelsIn;
+		typeOfGearBox = typeOfGearBoxIn;
+		typeOfFuel=typeOfFuelIn;
+		typeOfVehicle = "Car";
+		numberOfwheels = 4;
 		roofType = roofTypeIn;
 	};
 	

@@ -63,10 +63,10 @@ public:
 	void listTypeOfVehicles();
 
 	//Prints the name of the garage
-	void printGarage(int numberofSpots);
+	void printGarageNameAndSpots(int numberofSpots);
 
 	void addDefaultGarage();
-	int addGarage();
+	void addGarage();
 	void searchMenu();
 	void editGarage();
 };

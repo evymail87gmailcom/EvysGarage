@@ -10,8 +10,8 @@ void Truck::addVehicleAttributes() {
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
 	cin >> color;
-	cout << "Enter typeOfWheels(Summer/Winter): ";
-	cin >> typeOfWheels;
+	cout << "Enter number of wheels: ";
+	cin >> numberOfwheels;
 	cout << "Enter Axelconfiguration: ";
 	cin >> axelConfiguration;
 	cout << "Enter regnr: ";
@@ -24,14 +24,12 @@ void Truck::printVehicleAttributes() {
 	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
-	cout << "Type of wheels:\t" << typeOfWheels << endl;
-	cout << "Number of gears:" << numberOfGears << endl;
+	cout << "Number of wheels:" << numberOfwheels << endl;
 	cout << "Axelconfiguration:" << axelConfiguration << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
-	cout << "--------------------------------------------------------------" << endl;
 }
-//Returns registration,color,nrofwheels,nrofseats,rooftype
+//Returns registration,color,vehicletype
 string Truck::getReg() {
 	return regNr;
 }

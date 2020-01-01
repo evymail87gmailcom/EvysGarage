@@ -11,10 +11,10 @@ void MotorCycle::addVehicleAttributes() {
 	cin >> color;
 	cout << "Enter typeOfWheels(Summer/Winter): ";
 	cin >> typeOfWheels;
-	cout << "Enter numberOfGears: ";
-	cin >> numberOfGears;
 	cout << "Enter cc: ";
 	cin >> cc;
+	cout << "Enter type of fuel: ";
+	cin >> typeOfFuel;
 	cout << "Enter regnr: ";
 	cin >> regNr;
 	cout << "--------------------------------------------------------------" << endl;
@@ -26,12 +26,10 @@ void MotorCycle::printVehicleAttributes() {
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
 	cout << "Type of wheels:\t" << typeOfWheels << endl;
-	cout << "Number of gears:" << numberOfGears << endl;
 	cout << "CC:\t\t" << cc << endl;
+	cout << "Type of fuel:\t" << typeOfFuel << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
-	cout << "--------------------------------------------------------------" << endl;
-
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype
 string MotorCycle::getReg() {

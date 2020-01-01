@@ -9,10 +9,6 @@ void Bus::addVehicleAttributes() {
 	cin >> nameOfBrand;
 	cout << "Enter color: ";
 	cin >> color;
-	cout << "Enter typeOfWheels(Summer/Winter): ";
-	cin >> typeOfWheels;
-	cout << "Enter type of gearbox: ";
-	cin >> typeOfGearBox;
 	cout << "Enter number of seats: ";
 	cin >> numberOfSeats;
 	cout << "Enter regnr: ";
@@ -26,12 +22,9 @@ void Bus::printVehicleAttributes() {
 	cout << "Type of Vehicle:" << typeOfVehicle << endl;
 	cout << "Name:\t\t" << nameOfBrand << endl;
 	cout << "Color:\t\t" << color << endl;
-	cout << "Type of wheels:\t" << typeOfWheels << endl;
-	cout << "Type of gearbox:" << typeOfGearBox<< endl;
 	cout << "Number of seats:" << numberOfSeats << endl;
 	cout << "RegNr:\t\t" << regNr << endl;
 	cout << "\n";
-	cout << "--------------------------------------------------------------" << endl;
 }
 //Returns registration,color,nrofwheels,nrofseats,rooftype
 string Bus::getReg() {
