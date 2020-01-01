@@ -4,7 +4,7 @@
 #include"GarageHeader.h"
 #include"Vehicle.h"
 using namespace std;
-//UI
+
 int main() {
 
 	Garage start;
