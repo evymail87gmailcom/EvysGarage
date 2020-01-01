@@ -8,10 +8,10 @@ An abstract baseklass, Vehicle, to be inherited by subclasses Car, Bicycle, Moto
 A garageclass that holds the functionality of the garage and an array of Vehicles.KLAR
 
 FUNCTIONS:
-ListVehicles-prints all vehicles in the garage.KLAR
-ListTypeOfVehicles- prints all vehicletypes and how many of them there are in the garage.NOT USED
-AddVehicle-Adds a vehicle to the garage.KLAR
-RemoveVehicle-removes a vehicle from the garage.KLAR
+ListVehicles-prints all vehicles in the garage.
+ListTypeOfVehicles- prints all vehicletypes and how many of them there are in the garage.
+AddVehicle-Adds a vehicle to the garage.
+RemoveVehicle-removes a vehicle from the garage.
 MaxVehicles-have a maximum limit of parkingspots when instantiating a new garage.
 SearchVehicle- search for registrationnumber.KLAR
 Extended searchfunction to search for other paremetres.KLAR

@@ -196,6 +196,7 @@ void Garage::searchVehicleType() {
 //------------------------------------------------------------------------------------------------------------------------------------
 //Prints every type of vehicle and how many of them there are in the garage, WORKS! 
 void Garage::listTypeOfVehicles() {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "Name of garage" << nameOfGarage << endl;
 	cout << "Type of vehicle:\t" << "Number of vehicles:\t" << endl;
 	cout << "Bicycles:\t\t" << bicycleCounter << endl;
@@ -203,15 +204,18 @@ void Garage::listTypeOfVehicles() {
 	cout << "Trucks:\t\t\t" << truckCounter << endl;
 	cout << "Motorcycles:\t\t" << motorCycleCounter << endl;
 	cout << "Bus:\t\t\t" << busCounter << endl;
+	cout << "--------------------------------------------------------------" << endl;
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 //Prints the name of the garage
 void Garage::printGarageNameAndSpots(int numberofSpots) {
+	cout << "--------------------------------------------------------------" << endl;
 	cout << "\n";
 	cout << "Name of garage:\t " << nameOfGarage << endl;
 	cout << "\n";
 	cout << "Number of parkingspots: " << numberofSpots << endl;
 	cout << "--------------------------------------------------------------" << endl;
+
 }
 
 
@@ -274,7 +278,7 @@ void Garage::removeVehicle() {
 //Submenu for handling the garage
 void Garage::editGarage() {
 	int editMenuChoice;
-	bool editGaragechoose= "y";
+	
 	
 	do
 	{
@@ -313,11 +317,10 @@ void Garage::editGarage() {
 		default:
 			break;
 		}
-		cout << "Would you like to keep editing  your garage? yes=1/no=0" << endl;
-		cin >> editGaragechoose;
+	
 		system("cls");
 
-	} while (editGaragechoose == true);
+	} while (editMenuChoice!=0);
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 //Searchmenu
@@ -378,15 +381,15 @@ void Garage::searchMenu() {
 		default:
 			break;
 		}
-		cout << "Would you like to change searchcriterias? yes=1/no=0" << endl;
-		cin >> choose;
+	
 		system("cls");
 
-	} while (choose == true);
+	} while (menuChoice!=0);
 
 }
 //------------------------------------------------------------------------------------------------------------------------------------
 void Garage::addGarage() {
+	
 	cout << "--------------------------------------------------------------" << endl;
 	//Gives the garage a specific attribute-name
 	cout << "What would you like to call your garage?" << endl;
@@ -394,13 +397,21 @@ void Garage::addGarage() {
 	//Creation of garage-object per parameterized constructor
 	Garage* myNewGarage = new Garage(nameOfGarage);
 	//How many Vehicles we would like to add to the garage
-	cout << "Enter the number of spaces you want in your garage: " << endl;
+	do {
+	cout << "Enter the number of spaces you want in your garage, MAXIMUM 100 VEHICLES!: " << endl;
 	cin >> numberOfVehicles;
-	//return numberOfVehicles;
+	if (numberOfVehicles > 100) {
+		cout << "Exceeded maximum number of vehicles, please try again" << endl;
+	}
+
+	} while (numberOfVehicles > 100);
+	
+
+	
 	cout << "--------------------------------------------------------------" << endl;
 	system("cls");
 
 	editGarage();
 	printGarageNameAndSpots(numberOfVehicles);
-	delete myNewGarage;
+	
 }

@@ -11,21 +11,22 @@ int main() {
 	string nameOfMyGarage;
 	vector <Garage*> myGarageVector;
 	Garage* myNewGarage = new Garage(nameOfMyGarage);
-	bool choose = "y";
+	
 	
 	
 	
 
 	//Mainmenu-Chooses wheter to create a garage or not
-	cout << "Hello!" << endl;
-
+	cout << "Welcome!" << endl;
+	int chooseGarage = 0;
 	
 		do {
-			int chooseGarage = 0;
+			
 			cout << "--------------------------------------------------------------" << endl;
-			cout << "Press 1 to add a new garage to your collection?" << endl;
+			cout << "Press 1 to add a new garage to your collection" << endl;
 			cout << "Press 2 to use a default garage" << endl;
-			cout << "Press 3 to list all existing garages" << endl;
+			cout << "Press 3 to list vehicletypes" << endl;
+			cout << "Press 0 to exit program" << endl;
 			cout << "--------------------------------------------------------------" << endl;
 			cin >> chooseGarage;
 			system("cls");
@@ -47,15 +48,9 @@ int main() {
 				myGarageVector.push_back(myNewGarage);
 				break;
 			}
-			case 3: {//Only prints the last garage Make a function
-			
-			
-					//myNewGarage->printGarageNameAndSpots();
-					//myGarageVector[0]->listVehicles();
-					//myGarageVector[1]->listVehicles();
-					//myNewGarage->listVehicles();
-
-				
+			case 3: {
+				myNewGarage->listTypeOfVehicles();
+				cout << "Number of garages in the company " << myGarageVector.size() << endl;
 			}
 			default:
 				break;
@@ -63,14 +58,15 @@ int main() {
 			}
 			
 			
-			cout << "Number of garages in the company " << myGarageVector.size() << endl;
-			myNewGarage->listTypeOfVehicles();
-			cout << "Do you wish to return to Main Menu? Yes = 1/ No=0" << endl;
-			cin >> choose;
-			system("cls");
-		} while (choose == 1);
+		
+		
+			
+			
+		} while (chooseGarage !=0);
 
-	
+
+		cout << "Program ended without errors" << endl;
+		return 0;
 	
 		delete myNewGarage;
 }
