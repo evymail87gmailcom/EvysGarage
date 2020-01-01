@@ -9,6 +9,16 @@ using namespace std;
 class Car :public Vehicle {
 protected:
 	string roofType;
+	//Adding information to the Bicycle-object
+	void addVehicleAttributes();
+
+	//Prints the information added
+	void printVehicleAttributes();
+
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	string getReg();
+	string getColor();
+	string getTypeofVehicle();
 public:
 	Car() {
 		//Baseclass specific attributes
@@ -36,16 +46,7 @@ public:
 		roofType = roofTypeIn;
 	};
 	
-	//Adding information to the Bicycle-object
-	void addVehicleAttributes();
 
-	//Prints the information added
-	void printVehicleAttributes();
-
-	//Returns registration,color,nrofwheels,nrofseats,rooftype
-	string getReg();
-	string getColor();
-	string getTypeofVehicle();
 
 	~Car() {};
 };

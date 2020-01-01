@@ -9,6 +9,16 @@ using namespace std;
 class Truck :public Vehicle {
 protected:
 	string axelConfiguration;
+	//Adding information to the Truck-object
+	void addVehicleAttributes();
+
+	//Prints the information added
+	void printVehicleAttributes();
+
+	//Returns registration,color,vehicletype
+	string getReg();
+	string getColor();
+	string getTypeofVehicle();
 public:
 	Truck() {
 		//Default för basklass
@@ -33,16 +43,7 @@ public:
 		axelConfiguration = axelConfigurationIn;
 	};
 
-	//Adding information to the Truck-object
-	void addVehicleAttributes();
-	
-	//Prints the information added
-	void printVehicleAttributes();
-	
-	//Returns registration,color,vehicletype
-	string getReg();
-	string getColor();
-	string getTypeofVehicle();
+
 	~Truck() {};
 };
 

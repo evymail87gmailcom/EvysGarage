@@ -11,6 +11,16 @@ using namespace std;
 class MotorCycle :public Vehicle {
 protected:
 	int cc;
+	//Adding information to the Motorcycle-object
+	void addVehicleAttributes();
+
+	//Prints the information added
+	void printVehicleAttributes();
+
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	string getReg();
+	string getColor();
+	string getTypeofVehicle();
 
 public:
 	MotorCycle() {
@@ -37,16 +47,7 @@ public:
 		typeOfFuel = typeOfFuelIn;
 	};
 	
-	//Adding information to the Motorcycle-object
-	void addVehicleAttributes();
-	
-	//Prints the information added
-	void printVehicleAttributes();
-	
-	//Returns registration,color,nrofwheels,nrofseats,rooftype
-	string getReg();
-	string getColor();
-	string getTypeofVehicle();
+
 	~MotorCycle() {};
 };
 

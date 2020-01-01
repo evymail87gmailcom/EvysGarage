@@ -9,6 +9,15 @@ using namespace std;
 class Bus :public Vehicle {
 protected:
 	int numberOfSeats;
+	//Adding information to the Bus-object
+	void addVehicleAttributes();
+	//Prints the information added
+	void printVehicleAttributes();
+
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	string getReg();
+	string getColor();
+	string getTypeofVehicle();
 public:
 	Bus() {
 		//Default för basklass
@@ -31,15 +40,7 @@ public:
 		typeOfVehicle = "Bus";
 		regNr = regNrIn;
 	};
-	//Adding information to the Bus-object
-	void addVehicleAttributes();
-	//Prints the information added
-	void printVehicleAttributes();
 
-	//Returns registration,color,nrofwheels,nrofseats,rooftype
-	string getReg();
-	string getColor();
-	string getTypeofVehicle();
 	~Bus() {};
 };
 

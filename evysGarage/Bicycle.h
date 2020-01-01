@@ -9,7 +9,16 @@ class Bicycle :public Vehicle {
 protected:
 	string typeOfBike;
 	string electric;
+	//Adding information to the Bicycle-object
+	void addVehicleAttributes();
 
+	//Prints the information added
+	void printVehicleAttributes();
+
+	//Returns registration,color,nrofwheels,nrofseats,rooftype
+	string getReg();
+	string getColor();
+	string getTypeofVehicle();
 public:
 
 	Bicycle() {
@@ -38,16 +47,7 @@ public:
 		typeOfBike = typeOfBikeIn;
 		electric = electricIn;
 	};
-	//Adding information to the Bicycle-object
-	void addVehicleAttributes();
 
-	//Prints the information added
-	void printVehicleAttributes();
-
-	//Returns registration,color,nrofwheels,nrofseats,rooftype
-	string getReg();
-	string getColor();
-	string getTypeofVehicle();
 	~Bicycle() {};
 };
 
