@@ -414,3 +414,58 @@ void Garage::addGarage() {
 	printGarageNameAndSpots(numberOfVehicles);
 	
 }
+
+void Garage::startPogram() {
+	//Mainmenu-Chooses wether to create a garage or not
+	cout << "Welcome!" << endl;
+	int chooseGarage = 0;
+
+	do {
+
+		cout << "--------------------------------------------------------------" << endl;
+		cout << "Press 1 to add a new garage to your collection" << endl;
+		cout << "Press 2 to use a default garage" << endl;
+		cout << "Press 3 to list vehicletypes" << endl;
+		cout << "Press 0 to exit program" << endl;
+		cout << "--------------------------------------------------------------" << endl;
+		cin >> chooseGarage;
+		system("cls");
+
+		switch (chooseGarage)
+		{
+			//Manually adds a Garage
+		case 1: {
+
+			addGarage();
+			myNewGarageVector.push_back(myNewGarage);
+			break;
+		}
+
+			  //Creates a garage with 10 pre-made vehicles
+		case 2: {
+			addDefaultGarage();
+			editGarage();
+			myNewGarageVector.push_back(myNewGarage);
+			break;
+		}
+		case 3: {
+			listTypeOfVehicles();
+			cout << "Number of garages in the company " << myNewGarageVector.size() << endl;
+		}
+		default:
+			break;
+
+		}
+
+
+
+
+
+
+	} while (chooseGarage != 0);
+
+
+
+
+	delete myNewGarage;
+}

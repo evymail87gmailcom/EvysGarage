@@ -25,8 +25,8 @@ protected:
 	int busCounter = 0;
 	int numberOfVehicles = 0;
 	string getNameOfGarage();
-
-
+	Garage* myNewGarage;
+	vector<Garage*> myNewGarageVector;
 	//submenu for removing vehicles
 	void removeVehicle();
 
@@ -50,7 +50,11 @@ protected:
 	//Prints the name of the garage
 	void printGarageNameAndSpots(int numberofSpots);
 	void searchMenu();
-
+	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
+	void listTypeOfVehicles();
+	void addDefaultGarage();
+	void addGarage();
+	void editGarage();
 
 public:
 	Garage() {
@@ -61,11 +65,8 @@ public:
 	Garage(string nameOfGarageIn) {
 		nameOfGarage = nameOfGarageIn;
 	};
-	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
-	void listTypeOfVehicles();
-	void addDefaultGarage();
-	void addGarage();
-	void editGarage();
+
+	void startPogram();
 
 	~Garage() {};
 };
