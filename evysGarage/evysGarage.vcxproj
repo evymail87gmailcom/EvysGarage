@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdminGarage.cpp" />
     <ClCompile Include="Bicycle.cpp" />
     <ClCompile Include="Bus.cpp" />
     <ClCompile Include="Car.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="Vehicle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdminGarage.h" />
     <ClInclude Include="Bicycle.h" />
     <ClInclude Include="Bus.h" />
     <ClInclude Include="Car.h" />

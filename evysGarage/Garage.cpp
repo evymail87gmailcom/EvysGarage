@@ -25,7 +25,6 @@ void Garage::addVehicleAttributes() {
 		cout << "One Bike it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		bicycleCounter++;
-		
 		break;
 	}
 	case 2: {
@@ -33,7 +32,6 @@ void Garage::addVehicleAttributes() {
 		cout << "One Motorbike it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		motorCycleCounter++;
-		
 		break;
 	}
 	case 3: {
@@ -41,7 +39,6 @@ void Garage::addVehicleAttributes() {
 		cout << "One Car it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		carCounter++;
-		
 		break;
 	}
 	case 4: {
@@ -49,7 +46,6 @@ void Garage::addVehicleAttributes() {
 		cout << "One Truck it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		truckCounter++;
-		
 		break;
 	}
 	case 5: {
@@ -94,7 +90,7 @@ void Garage::addDefaultGarage() {
 	busCounter = 2;
 	nameOfGarage = "DefaultGarage";
 	numberOfVehicles = 10;
-	printGarageNameAndSpots(numberOfVehicles);
+	
 
 }
 
@@ -102,7 +98,9 @@ void Garage::addDefaultGarage() {
 string Garage::getNameOfGarage() {
 	return nameOfGarage;
 }
-
+int Garage::getNumberOfSpots() {
+	return numberOfVehicles;
+}
 //returns the size of the garage
 int Garage::getSizeOfGarage() {
 	return myGarage.size();
@@ -395,8 +393,9 @@ void Garage::addGarage() {
 	cout << "--------------------------------------------------------------" << endl;
 	system("cls");
 	editGarage();
-	printGarageNameAndSpots(numberOfVehicles);
+	
 }
+
 
 void Garage::startPogram() {
 	
@@ -441,4 +440,8 @@ void Garage::startPogram() {
 	
 }
 
-
+//Returns the vector
+vector<Vehicle*> Garage::getObject() {
+	printGarageNameAndSpots(numberOfVehicles);
+	return myGarage;
+};

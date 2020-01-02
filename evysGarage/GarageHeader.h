@@ -14,6 +14,7 @@ using namespace std;
 
 class Garage {
 private:
+public:
 	int anyVehicle;
 	Vehicle* myVehicle;
 	vector <Vehicle*>myGarage;
@@ -32,7 +33,7 @@ private:
 	void removeVehicle();
 
 	int getSizeOfGarage();
-
+	int getNumberOfSpots();
 	//Function to add specifik vehicle attributes
 	void addVehicleAttributes();
 
@@ -57,7 +58,7 @@ private:
 	void addGarage();
 	void editGarage();
 
-public:
+
 	Garage() {
 		anyVehicle = 0;
 		numberOfVehicles = 0;
@@ -66,7 +67,7 @@ public:
 	Garage(string nameOfGarageIn) {
 		nameOfGarage = nameOfGarageIn;
 	};
-
+	vector<Vehicle*> getObject();
 	void startPogram();
 
 	~Garage() {};
