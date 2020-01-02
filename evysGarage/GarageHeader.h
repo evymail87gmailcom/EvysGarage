@@ -27,6 +27,7 @@ private:
 	string getNameOfGarage();
 	Garage* myMainGarage;
 	vector<Garage*> myMainGarageVector;
+	
 	//submenu for removing vehicles
 	void removeVehicle();
 
@@ -35,22 +36,22 @@ private:
 	//Function to add specifik vehicle attributes
 	void addVehicleAttributes();
 
-	//Adds a vehicle to the garage. WORKS!
+	//Adds a vehicle to the garage
 	void addVehicle();
 
-	//Prints every element of the garage, WORKS!!!
+	//Prints every element of the garage
 	void listVehicles();
 
-	//Searchfunction to find a specific registrationnumber in the garage, Works!!
+	//Searchfunctions to find a specific registrationnumbers, colors or vehicletype in the garage
 	void searchRegistrationNumber();
-
 	void searchColor();
 	void searchVehicleType();
 
 	//Prints the name of the garage
 	void printGarageNameAndSpots(int numberofSpots);
 	void searchMenu();
-	//Prints every type of vehicle and how many of them there are in the garage, WORKS! 
+
+	//Prints every type of vehicle and how many of them there are in the garage
 	void listTypeOfVehicles();
 	void addDefaultGarage();
 	void addGarage();

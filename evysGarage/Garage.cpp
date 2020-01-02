@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Function to define vehicles
 void Garage::addVehicleAttributes() {
 	cout << "--------------------------------------------------------------" << endl;
@@ -25,7 +25,7 @@ void Garage::addVehicleAttributes() {
 		cout << "One Bike it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		bicycleCounter++;
-		//delete myVehicle;
+		
 		break;
 	}
 	case 2: {
@@ -33,7 +33,7 @@ void Garage::addVehicleAttributes() {
 		cout << "One Motorbike it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		motorCycleCounter++;
-		//delete myVehicle;
+		
 		break;
 	}
 	case 3: {
@@ -41,7 +41,7 @@ void Garage::addVehicleAttributes() {
 		cout << "One Car it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		carCounter++;
-		//delete myVehicle;
+		
 		break;
 	}
 	case 4: {
@@ -49,7 +49,7 @@ void Garage::addVehicleAttributes() {
 		cout << "One Truck it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		truckCounter++;
-		//delete myVehicle;
+		
 		break;
 	}
 	case 5: {
@@ -57,14 +57,14 @@ void Garage::addVehicleAttributes() {
 		cout << "One Bus it is! " << endl;
 		myVehicle->addVehicleAttributes();
 		busCounter++;
-		//delete myVehicle;
+		
 	}
 	default:
 		break;
 	}
 };
 
-//------------------------------------------------------------------------------------------------------------------------------------
+//Default-values for demonstration
 void Garage::addDefaultGarage() {
 
 	myVehicle = new Bicycle("Monark", "Black", 5, "Summer", "MTB", "Yes");
@@ -97,33 +97,35 @@ void Garage::addDefaultGarage() {
 	printGarageNameAndSpots(numberOfVehicles);
 
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Returns the name of the garage
 string Garage::getNameOfGarage() {
 	return nameOfGarage;
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
+//returns the size of the garage
 int Garage::getSizeOfGarage() {
 	return myGarage.size();
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Adds a vehicle to the garage
 void Garage::addVehicle() {
 	myGarage.push_back(myVehicle);
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Prints every element of the garage
 void Garage::listVehicles() {
+	printGarageNameAndSpots(numberOfVehicles);
 	for (int i = 0; i < myGarage.size(); i++)
 	{
 		myGarage[i]->printVehicleAttributes();
 	}
 
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Searchfunction to find a specific registrationnumber in the garage
 void Garage::searchRegistrationNumber() {
-
+	printGarageNameAndSpots(numberOfVehicles);
 	cout << "Enter the regnr to search for: " << endl;
 	bool foundVehicle = 0;
 	string input;
@@ -134,6 +136,7 @@ void Garage::searchRegistrationNumber() {
 		string regNr = myGarage[i]->getReg();
 		if (regNr == input) {
 			cout << "Found vehicle " << regNr << " at parkingspot nr: " << i + 1 << endl;
+			myGarage[i]->printVehicleAttributes();
 			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
 			foundVehicle = true;
 		}
@@ -144,10 +147,10 @@ void Garage::searchRegistrationNumber() {
 	}
 
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Searchfunction to find a specific color in the garage
 void Garage::searchColor() {
-
+	printGarageNameAndSpots(numberOfVehicles);
 	cout << "Enter the color to search for: " << endl;
 	bool foundVehicle = 0;
 	string input;
@@ -158,20 +161,21 @@ void Garage::searchColor() {
 		string color = myGarage[i]->getColor();
 		if (color == input) {
 			cout << "Found a " << color << " vehicle at parkingspot nr: " << i + 1 << endl;
+			myGarage[i]->printVehicleAttributes();
 			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
 			foundVehicle = true;
 		}
 	}
 	//Exceptionhandling if other input than existing vehicle is given
 	if (foundVehicle == false) {
-		cout << "No vehicle with the selected registration was found" << endl;
+		cout << "No vehicle with the selected color was found" << endl;
 	}
 
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Searchfunction to find a type of vehicle in the garage
 void Garage::searchVehicleType() {
-
+	printGarageNameAndSpots(numberOfVehicles);
 	cout << "Enter the vehicletype to search for: " << endl;
 	bool foundVehicle = 0;
 	string input;
@@ -182,6 +186,7 @@ void Garage::searchVehicleType() {
 		string vehicleType = myGarage[i]->getTypeofVehicle();
 		if (vehicleType == input) {
 			cout << "Found a " << vehicleType << " match at parkingspot nr: " << i + 1 << endl;
+			myGarage[i]->printVehicleAttributes();
 			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
 			foundVehicle = true;
 			continue;
@@ -193,7 +198,7 @@ void Garage::searchVehicleType() {
 	}
 
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Prints every type of vehicle and how many of them there are in the garage
 void Garage::listTypeOfVehicles() {
 	cout << "--------------------------------------------------------------" << endl;
@@ -206,23 +211,21 @@ void Garage::listTypeOfVehicles() {
 	cout << "Bus:\t\t\t" << busCounter << endl;
 	cout << "--------------------------------------------------------------" << endl;
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Prints the name of the garage
 void Garage::printGarageNameAndSpots(int numberofSpots) {
 	cout << "--------------------------------------------------------------" << endl;
-	cout << "\n";
 	cout << "Name of garage:\t " << nameOfGarage << endl;
-	cout << "\n";
 	cout << "Number of parkingspots: " << numberofSpots << endl;
 	cout << "--------------------------------------------------------------" << endl;
 
 }
 
 
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Submenu for removevehicle main-choice
 void Garage::removeVehicle() {
-	
+	printGarageNameAndSpots(numberOfVehicles);
 	cout << "1 to remove a specific vehicle by entering RegNumber" << endl;
 	cout << "2 to remove the last entry" << endl;
 	cout << "0 to exit the menu" << endl;
@@ -232,6 +235,7 @@ void Garage::removeVehicle() {
 	switch (input)
 	{
 	case 1: {
+		printGarageNameAndSpots(numberOfVehicles);
 		//Removes the element based on searched reg.nr
 		cout << "Enter the regnr to search for: " << endl;
 		bool foundVehicle = 0;
@@ -245,14 +249,16 @@ void Garage::removeVehicle() {
 			if (regNr == input) {
 				cout << "Found vehicle at element: " << i << endl;
 				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
-
+				myGarage[i]->printVehicleAttributes();
 				foundVehicle = true;
 				//Extra safety
-				cout << "Are you sure you want to remove vehicle from garage?" << endl;
+				cout << "Are you sure you want to remove vehicle from garage? Yes = 1/No = 0" << endl;
 				cin >> choice;
 				if (choice == 1) {
+					cout <<"Number of vehicles before removal: "<< myGarage.size()<<endl;
+					delete myGarage[i];
 					myGarage.erase(remove(myGarage.begin(), myGarage.end(), myGarage[i]));
-
+					cout << "Number of vehicles after removal: "<<myGarage.size()<<" "<<endl;
 				}
 			}
 		}
@@ -273,10 +279,11 @@ void Garage::removeVehicle() {
 		break;
 	}
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Submenu for handling the garage
 void Garage::editGarage() {
 	int editMenuChoice;
+	
 	do
 	{
 		cout << "1 to add Vehicles to your garage" << endl;
@@ -314,13 +321,14 @@ void Garage::editGarage() {
 		}
 	} while (editMenuChoice != 0);
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 //Searchmenu
 void Garage::searchMenu() {
-
+	
 	int menuChoice = 0;
 	bool choose;
 	do {
+		printGarageNameAndSpots(numberOfVehicles);
 		cout << "Press 1 to Search for registrationnumbers in the garage" << endl;
 		cout << "Press 2 to Search for a specific color in the garage" << endl;
 		cout << "Press 3 to Search for a type of vehicle in the garage" << endl;
@@ -333,7 +341,6 @@ void Garage::searchMenu() {
 		{
 		case 1: {
 			do {
-
 				searchRegistrationNumber();
 				cout << "Do you wish to do another search, press 1 Or to get back to the searchmenu press 0" << endl;
 				cin >> choose;
@@ -367,7 +374,7 @@ void Garage::searchMenu() {
 		system("cls");
 	} while (menuChoice != 0);
 }
-//------------------------------------------------------------------------------------------------------------------------------------
+
 void Garage::addGarage() {
 
 	cout << "--------------------------------------------------------------" << endl;
@@ -433,3 +440,5 @@ void Garage::startPogram() {
 	} while (chooseGarage != 0);
 	
 }
+
+
