@@ -61,8 +61,14 @@ int main() {
 		cout << "\t\t\t\t\t\t\tMainMenu" << endl;
 
 	} while (choice != 0);
-
-	cout << "Welcome back!" << endl;
+	system("cls");
+	cout << "\n" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\t\t\t\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\t\t\tHave a nice day!\t\t     *" << endl;
+	cout << "\t\t\t\t*\t\t\t\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\t\t\t\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 	return 0;
 }
 

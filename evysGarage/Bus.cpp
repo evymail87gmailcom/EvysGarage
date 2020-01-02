@@ -4,27 +4,30 @@ using namespace std;
 
 //Adding information to the Bus-object
 void Bus::addVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Enter nameOfBrand: ";
+	
+	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
-	cout << "Enter color: ";
+	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
-	cout << "Enter number of seats: ";
+	cout << "\t\t\t\t*\tEnter number of seats: ";
 	cin >> numberOfSeats;
-	cout << "Enter regnr: ";
+	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
-	cout << "--------------------------------------------------------------" << endl;
-
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t";
+	system("pause");
+	system("cls");
 }
 //Prints the information added
 void Bus::printVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Type of Vehicle:" << typeOfVehicle << endl;
-	cout << "Name:\t\t" << nameOfBrand << endl;
-	cout << "Color:\t\t" << color << endl;
-	cout << "Number of seats:" << numberOfSeats << endl;
-	cout << "RegNr:\t\t" << regNr << endl;
-	cout << "\n";
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\tType of Vehicle:" << typeOfVehicle << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tName:\t\t" << nameOfBrand << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tColor:\t\t" << color << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tNumber of seats:" << numberOfSeats << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tRegNr:\t\t" << regNr << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+
 }
 //Returns registration,color,type of vehicle
 string Bus::getReg() {

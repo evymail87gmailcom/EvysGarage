@@ -5,17 +5,16 @@ using namespace std;
 
 
 
-
+//Completely done!!!!!!!!
 void AdminGarage::createGarage() {
 	int chooseGarage = 0;
 	do {
 		cout << "\n" << endl;
 		cout << "\t\t\t\t\t\tWelcome to the AdminTool!" << endl;
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-		cout << "\t\t\t\tPress 1 to manually add a garage" << endl;
-		cout << "\t\t\t\tPress 2 to use a default garage" << endl;
-		//cout << "Press 3 to list vehicletypes" << endl;
-		cout << "\t\t\t\tPress 0 to exit program" << endl;
+		cout << "\t\t\t\t*\t\tPress 1 to manually add a garage\t     *" << endl;
+		cout << "\t\t\t\t*\t\tPress 2 to use a default garage\t\t     *" << endl;
+		cout << "\t\t\t\t*\t\tPress 0 to exit program\t\t\t     *" << endl;
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cin >> chooseGarage;
 		system("cls");
@@ -51,6 +50,7 @@ void AdminGarage::addGarageToCollection() {
 	garageCollection.push_back(mainGarage);
 };
 
+//IF NOT USED,REMOVE!!!!!!!
 void AdminGarage::listGarageAttributes() {
 	for (int i = 0; i < garageCollection.size(); i++)
 	{	
@@ -59,7 +59,9 @@ void AdminGarage::listGarageAttributes() {
 }
 
 void AdminGarage::searchGarage() {
-	cout << "Enter the GarageName to search for: " << endl;
+	cout << "\n" << endl;
+	cout << "\n" << endl;
+	cout << "\t\t\t\tEnter the GarageName to search for: ";
 	bool foundGarage = 0;
 	string input;
 	cin >> input;
@@ -82,7 +84,10 @@ void AdminGarage::searchGarage() {
 	}
 	//Exceptionhandling if other input than existing vehicle is given
 	if (foundGarage == false) {
-		cout << "No garage with the corresponding name was found" << endl;
+		cout << "\t\t\t\tNo garage with the corresponding name was found" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
 	}
 }
 void AdminGarage::removeGarage() {

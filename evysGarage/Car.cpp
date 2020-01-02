@@ -5,35 +5,39 @@ using namespace std;
 
 //Adding information to the Bicycle-object
 void Car::addVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Enter nameOfBrand: ";
+	
+	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
-	cout << "Enter color: ";
+	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
-	cout << "Enter typeOfWheels(Summer/Winter/AYR): ";
+	cout << "\t\t\t\t*\tEnter typeOfWheels(Summer/Winter/AYR): ";
 	cin >> typeOfWheels;
-	cout << "Enter type of gearbox: ";
+	cout << "\t\t\t\t*\tEnter type of gearbox: ";
 	cin >> typeOfGearBox;
-	cout << "Enter type of fuel: ";
+	cout << "\t\t\t\t*\tEnter type of fuel: ";
 	cin >> typeOfFuel;
-	cout << "Enter Rooftype: ";
+	cout << "\t\t\t\t*\tEnter Rooftype: ";
 	cin >> roofType;
-	cout << "Enter regnr: ";
+	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
-	cout << "--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t";
+	system("pause");
+	system("cls");
 }
 //Prints the information added
 void Car::printVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Type of Vehicle:" << typeOfVehicle << endl;
-	cout << "Name:\t\t" << nameOfBrand << endl;
-	cout << "Color:\t\t" << color << endl;
-	cout << "Type of wheels:\t" << typeOfWheels << endl;
-	cout << "Type of gearbox:" << typeOfGearBox << endl;
-	cout << "Rooftype:\t" << roofType << endl;
-	cout << "Fueltype:\t" << typeOfFuel << endl;
-	cout << "RegNr:\t\t" << regNr << endl;
-	cout << "\n";
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\tType of Vehicle:" << typeOfVehicle << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tName:\t\t" << nameOfBrand << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tColor:\t\t" << color << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tType of wheels:\t" << typeOfWheels << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tType of gearbox:" << typeOfGearBox << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tRooftype:\t" << roofType << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tFueltype:\t" << typeOfFuel << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tRegNr:\t\t" << regNr << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+
 }
 //Returns registration,color,type of vehicle
 string Car::getReg() {

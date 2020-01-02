@@ -5,29 +5,33 @@ using namespace std;
 
 //Adding information to the Truck-object
 void Truck::addVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Enter nameOfBrand: ";
+	
+	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
-	cout << "Enter color: ";
+	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
-	cout << "Enter number of wheels: ";
+	cout << "\t\t\t\t*\tEnter number of wheels: ";
 	cin >> numberOfwheels;
-	cout << "Enter Axelconfiguration: ";
+	cout << "\t\t\t\t*\tEnter Axelconfiguration: ";
 	cin >> axelConfiguration;
-	cout << "Enter regnr: ";
+	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
-	cout << "--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t";
+	system("pause");
+	system("cls");
 }
 //Prints the information added
 void Truck::printVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Type of Vehicle:" << typeOfVehicle << endl;
-	cout << "Name:\t\t" << nameOfBrand << endl;
-	cout << "Color:\t\t" << color << endl;
-	cout << "Number of wheels:" << numberOfwheels << endl;
-	cout << "Axelconfiguration:" << axelConfiguration << endl;
-	cout << "RegNr:\t\t" << regNr << endl;
-	cout << "\n";
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\tType of Vehicle:" << typeOfVehicle << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tName:\t\t" << nameOfBrand << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tColor:\t\t" << color << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tNumber of wheels:" << numberOfwheels << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tAxelconfiguration:" << axelConfiguration << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tRegNr:\t\t" << regNr << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+
 }
 //Returns registration,color,vehicletype
 string Truck::getReg() {

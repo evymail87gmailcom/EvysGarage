@@ -4,32 +4,36 @@ using namespace std;
 
 //Adding information to the Motorcycle-object
 void MotorCycle::addVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Enter nameOfBrand: ";
+	
+	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
-	cout << "Enter color: ";
+	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
-	cout << "Enter typeOfWheels(Summer/Winter): ";
+	cout << "\t\t\t\t*\tEnter typeOfWheels(Summer/Winter): ";
 	cin >> typeOfWheels;
-	cout << "Enter cc: ";
+	cout << "\t\t\t\t*\tEnter cc: ";
 	cin >> cc;
-	cout << "Enter type of fuel: ";
+	cout << "\t\t\t\t*\tEnter type of fuel: ";
 	cin >> typeOfFuel;
-	cout << "Enter regnr: ";
+	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
-	cout << "--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t";
+	system("pause");
+	system("cls");
 }
 //Prints the information added
 void MotorCycle::printVehicleAttributes() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Type of Vehicle:" << typeOfVehicle << endl;
-	cout << "Name:\t\t" << nameOfBrand << endl;
-	cout << "Color:\t\t" << color << endl;
-	cout << "Type of wheels:\t" << typeOfWheels << endl;
-	cout << "CC:\t\t" << cc << endl;
-	cout << "Type of fuel:\t" << typeOfFuel << endl;
-	cout << "RegNr:\t\t" << regNr << endl;
-	cout << "\n";
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\tType of Vehicle:" << typeOfVehicle << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tName:\t\t" << nameOfBrand << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tColor:\t\t" << color << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tType of wheels:\t" << typeOfWheels << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tCC:\t\t" << cc << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tType of fuel:\t" << typeOfFuel << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tRegNr:\t\t" << regNr << "\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+
 }
 //Returns registration,color,type of vehicle
 string MotorCycle::getReg() {
