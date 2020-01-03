@@ -24,6 +24,7 @@ however all counters needs to be looked over and I need to decide what I need th
 a new, manual garage. Also, when that occurs the counter will still interpret this as a created vehicle-object.
 -Read up on cin.ignore/failbit etc and work with errorhandling on the input-fields. Make a function for this.
 -Use StringCompare instead of ==, also to secure that the input is the desired one.
+
 -Remove unused functions and variables!!
 -Create a graphics-class, practice som graphics with windows.h, JUST FOR FUN!
 

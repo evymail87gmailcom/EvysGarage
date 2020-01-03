@@ -1,11 +1,7 @@
 #include "AdminGarage.h"
 #include <iostream>
-
 using namespace std;
 
-
-
-//Completely done!!!!!!!!
 void AdminGarage::createGarage() {
 	int chooseGarage = 0;
 	do {
@@ -44,21 +40,60 @@ void AdminGarage::createGarage() {
 
 	} while (chooseGarage != 0);
 }
-
-
-
 void AdminGarage::addGarageToCollection() {
 	garageCollection.push_back(mainGarage);
 };
-
-//IF NOT USED,REMOVE!!!!!!!
-void AdminGarage::listGarageAttributes() {
+void AdminGarage::listGarage() {
 	for (int i = 0; i < garageCollection.size(); i++)
-	{	
-		mainGarage->printGarageNameAndSpots(mainGarage->getSizeOfGarage());
+	{
+		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+		cout << "\t\t\t\t*\t\tGaragenumber:\t " << i << endl;
+		cout << "\t\t\t\t*\t\tName of garage\t " << garageCollection[i]->getNameOfGarage() << endl;
+		cout << "\t\t\t\t*\t\tSize of garage\t " << garageCollection[i]->getNumberOfSpots() << endl;
+		cout << "\t\t\t\t*\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
+		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+		cout << "\n" << endl;
+	}
+
+};
+void AdminGarage::accessGarage() {
+	cout << "\n";
+	cout << "\n";
+	cout << "\t\t\t\tEnter the GarageName to access: ";
+	bool foundGarage = 0;
+	string input;
+	cin >> input;
+
+	for (auto i = 0; i != garageCollection.size(); i++)
+	{
+		string garageName = garageCollection[i]->getNameOfGarage();
+		if (garageName == input) {
+			cout << "\t\t\t\tFound Garage " << garageName << " at row nr: " << i + 1 << endl;
+			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+			cout << "\t\t\t\tGaragenumber:\t " << i << endl;
+			cout << "\t\t\t\tName of garage\t " << garageCollection[i]->getNameOfGarage() << endl;
+			cout << "\t\t\t\tSize of garage\t " << garageCollection[i]->getNumberOfSpots() << endl;
+			cout << "\t\t\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
+			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+			cout << "\n" << endl;
+
+			cout << "\t\t\t\tPress any key to Access the Garage" << endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
+			garageCollection[i]->editGarage();
+			foundGarage = true;
+
+		}
+	}
+	//Exceptionhandling if other input than existing vehicle is given
+	if (foundGarage == false) {
+		cout << "\t\t\t\tNo garage with the corresponding name was found" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
 	}
 }
-
 void AdminGarage::searchGarage() {
 	cout << "\n" << endl;
 	cout << "\n" << endl;
@@ -147,61 +182,6 @@ void AdminGarage::removeGarage() {
 		break;
 	}
 
-}
-
-
-
-
-void AdminGarage::listGarage() {
-	for (int i = 0; i < garageCollection.size(); i++)
-	{
-		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-		cout <<"\t\t\t\t*\t\tGaragenumber:\t "<< i << endl;
-		cout << "\t\t\t\t*\t\tName of garage\t "<<garageCollection[i]->getNameOfGarage() << endl;
-		cout<<"\t\t\t\t*\t\tSize of garage\t "<<garageCollection[i]->getNumberOfSpots()<<endl;
-		cout << "\t\t\t\t*\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
-		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-		cout << "\n" << endl;
-	}
-
-};
-void AdminGarage::accessGarage() {
-	cout << "\n";
-	cout << "\n";
-	cout << "\t\t\t\tEnter the GarageName to access: ";
-	bool foundGarage = 0;
-	string input;
-	cin >> input;
-
-	for (auto i = 0; i != garageCollection.size(); i++)
-	{
-		string garageName = garageCollection[i]->getNameOfGarage();
-		if (garageName == input) {
-			cout << "\t\t\t\tFound Garage " << garageName << " at row nr: " << i + 1 << endl;
-			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-			cout << "\t\t\t\tGaragenumber:\t " << i << endl;
-			cout << "\t\t\t\tName of garage\t " << garageCollection[i]->getNameOfGarage() << endl;
-			cout << "\t\t\t\tSize of garage\t " << garageCollection[i]->getNumberOfSpots() << endl;
-			cout << "\t\t\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
-			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-			cout << "\n" << endl;
-		
-			cout << "\t\t\t\tPress any key to Access the Garage"<<endl;
-			cout << "\t\t\t\t";
-			system("pause");
-			system("cls");
-			garageCollection[i]->editGarage();
-			foundGarage = true;
-		
-		}
-	}
-	//Exceptionhandling if other input than existing vehicle is given
-	if (foundGarage == false) {
-		cout << "\t\t\t\tNo garage with the corresponding name was found" << endl;
-		cout << "\t\t\t\t";
-		system("pause");
-		system("cls");
-	}
 }
 void AdminGarage::startAdmin() {
 	int choice = 0;

@@ -6,35 +6,20 @@
 using namespace std;
 
 class AdminGarage {
-public:
-	int garageCounter;
+
+private:
+	int garageCounter=0;
 	Garage *mainGarage;
 	vector<Garage*> garageCollection;
-
-
-
-
-	AdminGarage() {
-		garageCounter=0;
-	};
-
 	void createGarage();
-	
 	void addGarageToCollection();
-	void listGarageAttributes();
+	void listGarage();
+	void accessGarage();
 	void searchGarage();
 	void removeGarage();
-
-
-
-	
-	void listGarage();
-	
-	void accessGarage();
-	void startAdmin();
-	
-	
-	
+public:
+	AdminGarage() {};
 	~AdminGarage() {};
+	void startAdmin();
 };
 

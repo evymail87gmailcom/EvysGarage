@@ -256,7 +256,7 @@ void Garage::listTypeOfVehicles() {
 	cout << "--------------------------------------------------------------" << endl;
 }
 
-//Prints the name of the garage
+//Prints the name and number of parkingspots in the garage
 void Garage::printGarageNameAndSpots(int numberofSpots) {
 	
 	cout << "\t\t\t\tName of garage:\t " << nameOfGarage << endl;
@@ -265,9 +265,6 @@ void Garage::printGarageNameAndSpots(int numberofSpots) {
 
 }
 
-
-
-//Submenu for removevehicle main-choice
 void Garage::removeVehicle() {
 	cout << "\n";
 	cout << "\n";
@@ -342,7 +339,6 @@ void Garage::removeVehicle() {
 	}
 }
 
-//Submenu for handling the garage
 void Garage::editGarage() {
 	int editMenuChoice;
 	
@@ -391,7 +387,6 @@ void Garage::editGarage() {
 	} while (editMenuChoice != 0);
 }
 
-//Searchmenu
 void Garage::searchMenu() {
 	
 	int menuChoice = 0;
@@ -465,52 +460,3 @@ void Garage::addGarage() {
 	
 }
 
-
-void Garage::startPogram() {
-	
-	cout << "Welcome!" << endl;
-	int chooseGarage = 0;
-
-	do {
-
-		cout << "--------------------------------------------------------------" << endl;
-		cout << "Press 1 to add a new garage to your collection" << endl;
-		cout << "Press 2 to use a default garage" << endl;
-		cout << "Press 3 to list vehicletypes" << endl;
-		cout << "Press 0 to exit program" << endl;
-		cout << "--------------------------------------------------------------" << endl;
-		cin >> chooseGarage;
-		system("cls");
-
-		switch (chooseGarage)
-		{
-		//Manually adds a Garage
-		case 1: {
-			addGarage();
-			myMainGarageVector.push_back(myMainGarage);
-			break;
-		}
-		 //Creates a garage with 10 pre-made vehicles
-		case 2: {
-			addDefaultGarage();
-			editGarage();
-			myMainGarageVector.push_back(myMainGarage);
-			break;
-		}
-		case 3: {
-			listTypeOfVehicles();
-			cout << "Number of garages in the company " << myMainGarageVector.size() << endl;
-		}
-		default:
-			break;
-		}
-
-	} while (chooseGarage != 0);
-	
-}
-
-//Returns the vector
-vector<Vehicle*> Garage::getObject() {
-	printGarageNameAndSpots(numberOfVehicles);
-	return myGarage;
-};

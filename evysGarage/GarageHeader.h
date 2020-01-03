@@ -14,7 +14,7 @@ using namespace std;
 
 class Garage {
 private:
-public:
+
 	int anyVehicle;
 	Vehicle* myVehicle;
 	vector <Vehicle*>myGarage;
@@ -25,16 +25,13 @@ public:
 	int motorCycleCounter = 0;
 	int busCounter = 0;
 	int numberOfVehicles = 0;
-	string getNameOfGarage();
+	
 	Garage* myMainGarage;
 	vector<Garage*> myMainGarageVector;
 	
 	//submenu for removing vehicles
 	void removeVehicle();
-
-	int getSizeOfGarage();
-	int getNumberOfSpots();
-	//Function to add specifik vehicle attributes
+	//Function to add specific vehicle attributes
 	void addVehicleAttributes();
 
 	//Adds a vehicle to the garage
@@ -49,16 +46,17 @@ public:
 	void searchVehicleType();
 
 	//Prints the name of the garage
-	void printGarageNameAndSpots(int numberofSpots);
+	
 	void searchMenu();
 
 	//Prints every type of vehicle and how many of them there are in the garage
 	void listTypeOfVehicles();
-	void addDefaultGarage();
-	void addGarage();
-	void editGarage();
+	
+	
 
 
+	
+public:
 	Garage() {
 		anyVehicle = 0;
 		numberOfVehicles = 0;
@@ -67,8 +65,16 @@ public:
 	Garage(string nameOfGarageIn) {
 		nameOfGarage = nameOfGarageIn;
 	};
-	vector<Vehicle*> getObject();
-	void startPogram();
+
+	void addDefaultGarage();
+	void addGarage();
+	int getNumberOfSpots();
+	string getNameOfGarage();
+	void editGarage();
+	void printGarageNameAndSpots(int numberofSpots);
+	int getSizeOfGarage();
+	
+	
 
 	~Garage() {};
 };
