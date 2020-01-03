@@ -245,15 +245,21 @@ void Garage::searchVehicleType() {
 
 //Prints every type of vehicle and how many of them there are in the garage
 void Garage::listTypeOfVehicles() {
-	cout << "--------------------------------------------------------------" << endl;
-	cout << "Name of garage" << nameOfGarage << endl;
-	cout << "Type of vehicle:\t" << "Number of vehicles:\t" << endl;
-	cout << "Bicycles:\t\t" << bicycleCounter << endl;
-	cout << "Cars:\t\t\t" << carCounter << endl;
-	cout << "Trucks:\t\t\t" << truckCounter << endl;
-	cout << "Motorcycles:\t\t" << motorCycleCounter << endl;
-	cout << "Bus:\t\t\t" << busCounter << endl;
-	cout << "--------------------------------------------------------------" << endl;
+	cout << "\n" << endl;
+	cout << "\t\t\t\t\t\t\tList of VehicleTypes" << endl;
+	cout << "\t\t\t\t" << "GarageName: " << getNameOfGarage() << endl;
+	cout << "\t\t\t\t" << "Number of parkingspots: " << getNumberOfSpots() << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\tType of vehicle:\t" << "Number of vehicles:\t" << "     *" << endl;
+	cout << "\t\t\t\t*\tBicycles:\t\t" << bicycleCounter << "\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tCars:\t\t\t" << carCounter << "\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tTrucks:\t\t\t" << truckCounter << "\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tMotorcycles:\t\t" << motorCycleCounter << "\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\tBus:\t\t\t" << busCounter << "\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t";
+	system("pause");
+	system("clear");
 }
 
 //Prints the name and number of parkingspots in the garage
@@ -353,6 +359,7 @@ void Garage::editGarage() {
 		cout << "\t\t\t\t*\tPress 2. to see a list of the Vehicles\t\t\t*" << endl;
 		cout << "\t\t\t\t*\tPress 3. to remove Vehicles from the garage\t\t*" << endl;
 		cout << "\t\t\t\t*\tPress 4. to search Vehicles to your garage\t\t*" << endl;
+		cout << "\t\t\t\t*\tPress 5. to list vehicletypes in your garage\t\t*" << endl;
 		cout << "\t\t\t\t*\tPress 0. to exit the editmenu\t\t\t\t*" << endl;
 		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
 		cout << "\t\t\t\t";
@@ -380,6 +387,9 @@ void Garage::editGarage() {
 		case 4: {
 			searchMenu();
 			break;
+		}
+		case 5: {
+			listTypeOfVehicles();
 		}
 		default:
 			break;
