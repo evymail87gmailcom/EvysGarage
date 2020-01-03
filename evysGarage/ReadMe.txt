@@ -17,9 +17,6 @@ SearchVehicle- search for registrationnumber.
 Extended searchfunction to search for other paremetres.
 
 
-
-
-
 Functiontesting:
 -The counters on each vehicle gets a default value of 2, probably because they are set to the value of 2 in the defaultGarage, 
 however all counters needs to be looked over and I need to decide what I need them for and where to show them.
@@ -28,6 +25,8 @@ a new, manual garage. Also, when that occurs the counter will still interpret th
 -Read up on cin.ignore/failbit etc and work with errorhandling on the input-fields. Make a function for this.
 -Use StringCompare instead of ==, also to secure that the input is the desired one.
 -Remove unused functions and variables!!
+-Create a graphics-class, practice som graphics with windows.h, JUST FOR FUN!
+
 
 
 
