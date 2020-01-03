@@ -31,7 +31,7 @@ public:
 	void listGarage();
 	
 	void accessGarage();
-	
+	void startAdmin();
 	
 	
 	

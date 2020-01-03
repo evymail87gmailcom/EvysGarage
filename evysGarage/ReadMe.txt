@@ -21,16 +21,18 @@ Extended searchfunction to search for other paremetres.
 
 
 Functiontesting:
+-The counters on each vehicle gets a default value of 2, probably because they are set to the value of 2 in the defaultGarage, 
+however all counters needs to be looked over and I need to decide what I need them for and where to show them.
+-Some disruptiveness with the AddVehicle-menu, double O needs to be pressed if you regret the choice "Adding vehicles" when instantiating
+a new, manual garage. Also, when that occurs the counter will still interpret this as a created vehicle-object.
+-Read up on cin.ignore/failbit etc and work with errorhandling on the input-fields. Make a function for this.
+-Use StringCompare instead of ==, also to secure that the input is the desired one.
+-Remove unused functions and variables!!
 
-Function: AddGarage-to manually add a garage
--When adding a new garage, the name and number of parkingspots is overwritten and any new vehicle is added to the existing collection. 
--If one adds 2 out of 3 vehicles the last place in the vector is duplicated by the last entry.
 
 
 
-Function: DefaultGarage- Instantiation of a defaultgarage to show UI-functions
--Add a function that prints the element where the vehicle is parked.
--Create a function to print extended attributes for more information about the vehicles.
 
-Possible solution and further developement:
--Make a new class for the Admin, this might make it easier to 
+
+
+

@@ -10,12 +10,13 @@ void AdminGarage::createGarage() {
 	int chooseGarage = 0;
 	do {
 		cout << "\n" << endl;
-		cout << "\t\t\t\t\t\tWelcome to the AdminTool!" << endl;
+		cout << "\t\t\t\t\t\tCreating Garage!" << endl;
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\t\t\t\t*\t\tPress 1 to manually add a garage\t     *" << endl;
 		cout << "\t\t\t\t*\t\tPress 2 to use a default garage\t\t     *" << endl;
-		cout << "\t\t\t\t*\t\tPress 0 to exit program\t\t\t     *" << endl;
+		cout << "\t\t\t\t*\t\tPress 0 to get to the Main menu\t\t     *" << endl;
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+		cout << "\t\t\t\t";
 		cin >> chooseGarage;
 		system("cls");
 
@@ -88,6 +89,7 @@ void AdminGarage::searchGarage() {
 		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
+		
 	}
 }
 void AdminGarage::removeGarage() {
@@ -164,7 +166,9 @@ void AdminGarage::listGarage() {
 
 };
 void AdminGarage::accessGarage() {
-	cout << "Enter the GarageName to access: " << endl;
+	cout << "\n";
+	cout << "\n";
+	cout << "\t\t\t\tEnter the GarageName to access: ";
 	bool foundGarage = 0;
 	string input;
 	cin >> input;
@@ -181,14 +185,80 @@ void AdminGarage::accessGarage() {
 			cout << "\t\t\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
 			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 			cout << "\n" << endl;
+		
+			cout << "\t\t\t\tPress any key to Access the Garage"<<endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
 			garageCollection[i]->editGarage();
-
-
 			foundGarage = true;
+		
 		}
 	}
 	//Exceptionhandling if other input than existing vehicle is given
 	if (foundGarage == false) {
-		cout << "No garage with the corresponding name was found" << endl;
+		cout << "\t\t\t\tNo garage with the corresponding name was found" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
 	}
+}
+void AdminGarage::startAdmin() {
+	int choice = 0;
+	cout << "\n" << endl;
+
+	cout << "\t\t\t\t\t\tWelcome to the AdminTool!" << endl;
+
+
+	do {
+		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+		cout << "\t\t\t\t*\t\tPress 1. to create a garage\t\t\t*" << endl;
+		cout << "\t\t\t\t*\t\tPress 2. to list garages\t\t\t*" << endl;
+		cout << "\t\t\t\t*\t\tPress 3. to access garages\t\t\t*" << endl;
+		cout << "\t\t\t\t*\t\tPress 4. to search for a garage\t\t\t*" << endl;
+		cout << "\t\t\t\t*\t\tPress 5. to delete a garage\t\t\t*" << endl;
+		cout << "\t\t\t\t*\t\tPress 0. to stop the program\t\t\t*" << endl;
+		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+		cout << "\t\t\t\t";
+		cin >> choice;
+		system("cls");
+
+		switch (choice)
+		{
+		case 1: {
+			createGarage();
+			break;
+		}
+		case 2: {
+			listGarage();
+			break;
+		}
+		case 3: {
+			accessGarage();
+			break;
+		}
+		case 4: {
+			searchGarage();
+			break;
+		}
+		case 5: {
+			removeGarage();
+		}
+		default:
+			break;
+		}
+
+
+		cout << "\n" << endl;
+		cout << "\t\t\t\t\t\t\tMainMenu" << endl;
+
+	} while (choice != 0);
+	system("cls");
+	cout << "\n" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+	cout << "\t\t\t\t*\t\t\t\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\t\t\tHave a nice day!\t\t     *" << endl;
+	cout << "\t\t\t\t*\t\t\t\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t*\t\t\t\t\t\t\t     *" << endl;
+	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 }
