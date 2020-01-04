@@ -6,7 +6,9 @@ void AdminGarage::createGarage() {
 	int chooseGarage = 0;
 	do {
 		cout << "\n" << endl;
-		cout << "\t\t\t\t\t\tCreating Garage!" << endl;
+		cout << "\t\t\t\t\t\t\tCreate Garage" << endl;
+		cout << "\t\t\t\t\t\t\t-------------" << endl;
+		cout << "\n" << endl;
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\t\t\t\t*\t\tPress 1 to manually add a garage\t     *" << endl;
 		cout << "\t\t\t\t*\t\tPress 2 to use a default garage\t\t     *" << endl;
@@ -48,13 +50,14 @@ void AdminGarage::listGarage() {
 	{
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\t\t\t\t*\t\tGaragenumber:\t " << i << endl;
-		cout << "\t\t\t\t*\t\tName of garage\t " << garageCollection[i]->getNameOfGarage() << endl;
-		cout << "\t\t\t\t*\t\tSize of garage\t " << garageCollection[i]->getNumberOfSpots() << endl;
-		cout << "\t\t\t\t*\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
+		garageCollection[i]->printGarageAttributes();
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\n" << endl;
+	
 	}
-
+	cout << "\t\t\t\t";
+	system("pause");
+	system("cls");
 };
 void AdminGarage::accessGarage() {
 	cout << "\n";
@@ -71,12 +74,9 @@ void AdminGarage::accessGarage() {
 			cout << "\t\t\t\tFound Garage " << garageName << " at row nr: " << i + 1 << endl;
 			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 			cout << "\t\t\t\tGaragenumber:\t " << i << endl;
-			cout << "\t\t\t\tName of garage\t " << garageCollection[i]->getNameOfGarage() << endl;
-			cout << "\t\t\t\tSize of garage\t " << garageCollection[i]->getNumberOfSpots() << endl;
-			cout << "\t\t\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
+			garageCollection[i]->printGarageAttributes();
 			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 			cout << "\n" << endl;
-
 			cout << "\t\t\t\tPress any key to Access the Garage" << endl;
 			cout << "\t\t\t\t";
 			system("pause");

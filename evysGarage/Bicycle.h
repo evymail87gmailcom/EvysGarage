@@ -9,6 +9,7 @@ class Bicycle :public Vehicle {
 protected:
 	string typeOfBike;
 	string electric;
+	int counter;
 	//Adding information to the Bicycle-object
 	void addVehicleAttributes();
 
@@ -19,10 +20,12 @@ protected:
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();
+	int getCounter(int x);
+	
 public:
-
+	int bicycletempcount;
 	Bicycle() {
-
+		
 		typeOfFuel = "";
 		typeOfGearBox = "";
 		regNr = "";
@@ -34,6 +37,7 @@ public:
 		typeOfBike = "";
 		electric = "Unknown";
 		typeOfVehicle = "Bicycle";
+		
 	};
 	//To add a default-bike
 	Bicycle(string brandIn, string colorIn, int numberOfGearsIn, string typeOfWheelsIn, string typeOfBikeIn, string electricIn) {
@@ -44,6 +48,7 @@ public:
 		numberOfGears = numberOfGearsIn;
 		typeOfBike = typeOfBikeIn;
 		electric = electricIn;
+		
 	};
 
 	~Bicycle() {};

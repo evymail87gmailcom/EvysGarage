@@ -43,3 +43,8 @@ string Truck::getColor() {
 string Truck::getTypeofVehicle() {
 	return typeOfVehicle;
 }
+int Truck::getCounter(int x) {
+	int counter = x;
+	counter++;
+	return counter;
+}

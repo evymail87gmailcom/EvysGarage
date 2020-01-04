@@ -9,6 +9,7 @@ using namespace std;
 class Car :public Vehicle {
 protected:
 	string roofType;
+	int counter;
 	//Adding information to the Bicycle-object
 	void addVehicleAttributes();
 
@@ -19,6 +20,8 @@ protected:
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();
+	int getCounter(int x);
+	
 public:
 	Car() {
 		

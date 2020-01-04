@@ -9,6 +9,7 @@ using namespace std;
 class Bus :public Vehicle {
 protected:
 	int numberOfSeats;
+	int counter;
 	//Adding information to the Bus-object
 	void addVehicleAttributes();
 	//Prints the information added
@@ -18,6 +19,8 @@ protected:
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();
+	int getCounter(int x);
+	
 public:
 	Bus() {
 		

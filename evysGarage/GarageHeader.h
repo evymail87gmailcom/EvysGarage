@@ -24,8 +24,8 @@ private:
 	int truckCounter = 0;
 	int motorCycleCounter = 0;
 	int busCounter = 0;
+	int numberOfSpots = 0;
 	int numberOfVehicles = 0;
-	
 	Garage* myMainGarage;
 	vector<Garage*> myMainGarageVector;
 	
@@ -71,8 +71,8 @@ public:
 	int getNumberOfSpots();
 	string getNameOfGarage();
 	void editGarage();
-	void printGarageNameAndSpots(int numberofSpots);
-	int getSizeOfGarage();
+	void printGarageAttributes();
+	int getNumberOfRegisteredVehicles();
 	
 	
 

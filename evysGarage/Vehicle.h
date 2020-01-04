@@ -15,8 +15,9 @@ protected:
 	string typeOfVehicle;
 	int numberOfwheels;
 	int numberOfGears;
-
+	
 public:
+
 	Vehicle() {
 		nameOfBrand = "";
 		color = "";
@@ -27,6 +28,7 @@ public:
 		numberOfwheels = 0;
 		numberOfGears = 0;
 		typeOfVehicle="";
+		
 	}
 	Vehicle(string colorIn, string brandIn, string fuelIn, string regIn, int numberOfGearsIn, string wheelsIn, string typeOfGearBoxIn, int numberOfWheelsIn,string typeOfVehicleIn) {
 		nameOfBrand = brandIn;
@@ -44,6 +46,7 @@ public:
 	virtual string getReg() = 0;
 	virtual string getColor() = 0;
 	virtual string getTypeofVehicle() = 0;
+	virtual int getCounter(int x) = 0;
 	virtual void addVehicleAttributes() = 0;
 	virtual void printVehicleAttributes() = 0;
 

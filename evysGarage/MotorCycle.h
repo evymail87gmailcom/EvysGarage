@@ -11,6 +11,7 @@ using namespace std;
 class MotorCycle :public Vehicle {
 protected:
 	int cc;
+	int counter;
 	//Adding information to the Motorcycle-object
 	void addVehicleAttributes();
 
@@ -21,7 +22,8 @@ protected:
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();
-
+	int getCounter(int x);
+	
 public:
 	MotorCycle() {
 		

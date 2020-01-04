@@ -9,7 +9,7 @@ using namespace std;
 class Truck :public Vehicle {
 protected:
 	string axelConfiguration;
-
+	int counter;
 	//Adding information to the Truck-object
 	void addVehicleAttributes();
 
@@ -20,6 +20,8 @@ protected:
 	string getReg();
 	string getColor();
 	string getTypeofVehicle();
+	int getCounter(int x);
+	
 public:
 	Truck() {
 		

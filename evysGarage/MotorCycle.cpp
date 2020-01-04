@@ -45,3 +45,8 @@ string MotorCycle::getColor() {
 string MotorCycle::getTypeofVehicle() {
 	return typeOfVehicle;
 }
+int MotorCycle::getCounter(int x) {
+	counter = x;
+	counter++;
+	return counter;
+}

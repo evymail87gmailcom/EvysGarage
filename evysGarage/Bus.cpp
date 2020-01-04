@@ -39,3 +39,8 @@ string Bus::getColor() {
 string Bus::getTypeofVehicle() {
 	return typeOfVehicle;
 }
+int Bus::getCounter(int x) {
+	counter = x;
+	counter++;
+	return counter;
+};

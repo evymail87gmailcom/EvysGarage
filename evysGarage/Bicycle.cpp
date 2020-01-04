@@ -45,3 +45,9 @@ string Bicycle::getColor() {
 string Bicycle::getTypeofVehicle() {
 	return typeOfVehicle;
 }
+int Bicycle::getCounter(int x) {
+	counter = x;
+	counter++;
+	return counter;
+}
+
