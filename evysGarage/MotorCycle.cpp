@@ -4,19 +4,72 @@ using namespace std;
 
 //Adding information to the Motorcycle-object
 void MotorCycle::addVehicleAttributes() {
-	
+	while (true) {
 	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter typeOfWheels(Summer/Winter): ";
 	cin >> typeOfWheels;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter cc: ";
 	cin >> cc;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter type of fuel: ";
 	cin >> typeOfFuel;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
 	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 	cout << "\t\t\t\t";
 	system("pause");

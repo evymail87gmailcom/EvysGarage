@@ -5,17 +5,61 @@ using namespace std;
 
 //Adding information to the Truck-object
 void Truck::addVehicleAttributes() {
-	
+	while (true) {
 	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter number of wheels: ";
 	cin >> numberOfwheels;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter Axelconfiguration: ";
 	cin >> axelConfiguration;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
 	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 	cout << "\t\t\t\t";
 	system("pause");

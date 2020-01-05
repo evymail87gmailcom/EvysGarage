@@ -8,8 +8,8 @@ using namespace std;
 class AdminGarage {
 
 private:
-	int garageCounter=0;
-	Garage *mainGarage;
+	int garageCounter = 0;
+	Garage* mainGarage;
 	vector<Garage*> garageCollection;
 	void createGarage();
 	void addGarageToCollection();

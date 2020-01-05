@@ -5,6 +5,7 @@ using namespace std;
 void AdminGarage::createGarage() {
 	int chooseGarage = 0;
 	do {
+		while(true){
 		cout << "\n" << endl;
 		cout << "\t\t\t\t\t\t\tCreate Garage" << endl;
 		cout << "\t\t\t\t\t\t\t-------------" << endl;
@@ -16,6 +17,16 @@ void AdminGarage::createGarage() {
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\t\t\t\t";
 		cin >> chooseGarage;
+		if (cin.fail()) {
+			system("cls");
+			cout << "\n" << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+		}
 		system("cls");
 
 		switch (chooseGarage)
@@ -35,7 +46,7 @@ void AdminGarage::createGarage() {
 			addGarageToCollection();
 			break;
 		}
-	
+
 		default:
 			break;
 		}
@@ -53,20 +64,32 @@ void AdminGarage::listGarage() {
 		garageCollection[i]->printGarageAttributes();
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\n" << endl;
-	
+
 	}
 	cout << "\t\t\t\t";
 	system("pause");
 	system("cls");
 };
 void AdminGarage::accessGarage() {
+	bool foundGarage = 0;
+	string input;
+	while(true){
 	cout << "\n";
 	cout << "\n";
 	cout << "\t\t\t\tEnter the GarageName to access: ";
-	bool foundGarage = 0;
-	string input;
-	cin >> input;
 
+	cin >> input;
+	if (cin.fail()) {
+		system("cls");
+		cout << "\n" << endl;
+		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+}
 	for (auto i = 0; i != garageCollection.size(); i++)
 	{
 		string garageName = garageCollection[i]->getNameOfGarage();
@@ -95,13 +118,25 @@ void AdminGarage::accessGarage() {
 	}
 }
 void AdminGarage::searchGarage() {
+	bool foundGarage = 0;
+	string input;
+	while(true){
 	cout << "\n" << endl;
 	cout << "\n" << endl;
 	cout << "\t\t\t\tEnter the GarageName to search for: ";
-	bool foundGarage = 0;
-	string input;
-	cin >> input;
 
+	cin >> input;
+	if (cin.fail()) {
+		system("cls");
+		cout << "\n" << endl;
+		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
 	for (auto i = 0; i != garageCollection.size(); i++)
 	{
 		string garageName = garageCollection[i]->getNameOfGarage();
@@ -114,7 +149,7 @@ void AdminGarage::searchGarage() {
 			cout << "\t\t\t\tNumber of vehicles in the garage:\t " << garageCollection.size() << endl;
 			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 			cout << "\n" << endl;
-			
+
 			foundGarage = true;
 		}
 	}
@@ -124,35 +159,59 @@ void AdminGarage::searchGarage() {
 		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
-		
+
 	}
 }
 void AdminGarage::removeGarage() {
+	int input;
+	while(true){
 	cout << "1 to remove a specific garage by entering garagename" << endl;
 	cout << "2 to remove the last entry" << endl;
 	cout << "0 to exit the menu" << endl;
-	int input;
+
 	cin >> input;
+	if (cin.fail()) {
+		system("cls");
+		cout << "\n" << endl;
+		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
 	system("cls");
 	switch (input)
 	{
 	case 1: {
-		
-		//Removes the element based on searched reg.nr
-		cout << "Enter the  to search for: " << endl;
 		bool foundGarage = 0;
 		bool choice;
 		string input;
+		while(true){
+		
+		//Removes the element based on searched reg.nr
+		cout << "Enter the  to search for: " << endl;
+		
 		cin >> input;
+		if (cin.fail()) {
+			system("cls");
+			cout << "\n" << endl;
+			cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
 
 		for (int i = 0; i != garageCollection.size(); i++)
 		{
 			string garageName = garageCollection[i]->getNameOfGarage();
 			if (garageName == input) {
-				cout << "Found Garage at row: " << i+1 << endl;
-				
-				cout << "Name of garage\t " << garageCollection[i]->getNameOfGarage() << endl;
-				cout << "Size of garage\t " << garageCollection[i]->getNumberOfSpots() << endl;
+				cout << "Found Garage at row: " << i + 1 << endl;
+				garageCollection[i]->printGarageAttributes();
 				foundGarage = true;
 				//Extra safety
 				cout << "Are you sure you want to remove garage from collection? Yes = 1/No = 0" << endl;
@@ -185,22 +244,33 @@ void AdminGarage::removeGarage() {
 }
 void AdminGarage::startAdmin() {
 	int choice = 0;
+	
 	cout << "\n" << endl;
 
 	cout << "\t\t\t\t\t\tWelcome to the AdminTool!" << endl;
 
 
 	do {
-		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-		cout << "\t\t\t\t*\t\tPress 1. to create a garage\t\t\t*" << endl;
-		cout << "\t\t\t\t*\t\tPress 2. to list garages\t\t\t*" << endl;
-		cout << "\t\t\t\t*\t\tPress 3. to access garages\t\t\t*" << endl;
-		cout << "\t\t\t\t*\t\tPress 4. to search for a garage\t\t\t*" << endl;
-		cout << "\t\t\t\t*\t\tPress 5. to delete a garage\t\t\t*" << endl;
-		cout << "\t\t\t\t*\t\tPress 0. to stop the program\t\t\t*" << endl;
-		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-		cout << "\t\t\t\t";
-		cin >> choice;
+		while (true) {
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\t*\t\tPress 1. to create a garage\t\t\t*" << endl;
+			cout << "\t\t\t\t*\t\tPress 2. to list garages\t\t\t*" << endl;
+			cout << "\t\t\t\t*\t\tPress 3. to access garages\t\t\t*" << endl;
+			cout << "\t\t\t\t*\t\tPress 4. to search for a garage\t\t\t*" << endl;
+			cout << "\t\t\t\t*\t\tPress 5. to delete a garage\t\t\t*" << endl;
+			cout << "\t\t\t\t*\t\tPress 0. to stop the program\t\t\t*" << endl;
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\t";
+			cin >> choice;
+			if (cin.fail()) {
+				system("cls");
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
+		}
 		system("cls");
 
 		switch (choice)

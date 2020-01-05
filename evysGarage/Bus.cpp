@@ -4,15 +4,50 @@ using namespace std;
 
 //Adding information to the Bus-object
 void Bus::addVehicleAttributes() {
-	
+	while (true) {
 	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter number of seats: ";
 	cin >> numberOfSeats;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
 	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 	cout << "\t\t\t\t";
 	system("pause");

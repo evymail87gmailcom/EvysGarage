@@ -5,21 +5,83 @@ using namespace std;
 
 //Adding information to the Bicycle-object
 void Car::addVehicleAttributes() {
-	
+	while (true) {
 	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
 	cin >> nameOfBrand;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter color: ";
 	cin >> color;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter typeOfWheels(Summer/Winter/AYR): ";
 	cin >> typeOfWheels;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter type of gearbox: ";
 	cin >> typeOfGearBox;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter type of fuel: ";
 	cin >> typeOfFuel;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter Rooftype: ";
 	cin >> roofType;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
+	while (true) {
 	cout << "\t\t\t\t*\tEnter regnr: ";
 	cin >> regNr;
+	if (cin.fail()) {
+		cin.clear();
+		cin.ignore(256, '\n');
+	}
+	else {
+		break;
+	}
+	}
 	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 	cout << "\t\t\t\t";
 	system("pause");

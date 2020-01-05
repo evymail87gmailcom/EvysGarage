@@ -4,19 +4,72 @@ using namespace std;
 
 //Adding information to the Bicycle-object
 void Bicycle::addVehicleAttributes() {
-
-	cout << "\t\t\t\t*\tEnter nameOfBrand: ";
-	cin >> nameOfBrand;
-	cout << "\t\t\t\t*\tEnter color: ";
-	cin >> color;
-	cout << "\t\t\t\t*\tEnter typeOfWheels(Summer/Winter): ";
-	cin >> typeOfWheels;
-	cout << "\t\t\t\t*\tEnter numberOfGears: ";
-	cin >> numberOfGears;
-	cout << "\t\t\t\t*\tEnter typeOfBike: ";
-	cin >> typeOfBike;
-	cout << "\t\t\t\t*\tEnter if it is an electric-bike(yes/no): ";
-	cin >> electric;
+	while (true) {
+		cout << "\t\t\t\t*\tEnter nameOfBrand: ";
+		cin >> nameOfBrand;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
+	while (true) {
+		cout << "\t\t\t\t*\tEnter color: ";
+		cin >> color;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
+	while (true) {
+		cout << "\t\t\t\t*\tEnter typeOfWheels(Summer/Winter): ";
+		cin >> typeOfWheels;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
+	while (true) {
+		cout << "\t\t\t\t*\tEnter numberOfGears: ";
+		cin >> numberOfGears;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
+	while (true) {
+		cout << "\t\t\t\t*\tEnter typeOfBike: ";
+		cin >> typeOfBike;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
+	while (true) {
+		cout << "\t\t\t\t*\tEnter if it is an electric-bike(yes/no): ";
+		cin >> electric;
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
+	}
 	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 	cout << "\t\t\t\t";
 	system("pause");
@@ -24,9 +77,9 @@ void Bicycle::addVehicleAttributes() {
 }
 //Prints the information added
 void Bicycle::printVehicleAttributes() {
-	
+
 	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-	cout << "\t\t\t\t*\tType of Vehicle:"<<typeOfVehicle<<"\t\t\t\t     *"<<endl;
+	cout << "\t\t\t\t*\tType of Vehicle:" << typeOfVehicle << "\t\t\t\t     *" << endl;
 	cout << "\t\t\t\t*\tName:\t\t" << nameOfBrand << "\t\t\t\t     *" << endl;
 	cout << "\t\t\t\t*\tColor:\t\t" << color << "\t\t\t\t     *" << endl;
 	cout << "\t\t\t\t*\tType of wheels:\t" << typeOfWheels << "\t\t\t\t     *" << endl;
