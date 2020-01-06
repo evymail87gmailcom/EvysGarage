@@ -6,31 +6,31 @@ using namespace std;
 
 //Function to define vehicles
 void Garage::addVehicleAttributes() {
-	while(true){
-	cout << "\n" << endl;
-	cout << "\t\t\t\t\t\t\tAdd Vehicle" << endl;
-	cout << "\t\t\t\t\t\t\t-----------" << endl;
-	cout << "\n";
-	cout << "\t\t\t\t\tChoose the type of vehicle you would like to add: " << endl;
-	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-	cout << "\t\t\t\t*\tPress 1. for Bicycle:\t\t\t\t     *" << endl;
-	cout << "\t\t\t\t*\tPress 2. for Motorcycle:\t\t\t     *" << endl;
-	cout << "\t\t\t\t*\tPress 3. for Car:\t\t\t\t     *" << endl;
-	cout << "\t\t\t\t*\tPress 4. for Truck:\t\t\t\t     *" << endl;
-	cout << "\t\t\t\t*\tPress 5. for Bus:\t\t\t\t     *" << endl;
-	cout << "\t\t\t\t*\tPress 0. to exit the menu\t\t\t     *" << endl;
-	cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-	cout << "\t\t\t\t";
-	cin >> anyVehicle;
-	if (cin.fail()) {
-		system("cls");
+	while (true) {
 		cout << "\n" << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
-	}
-	else {
-		break;
-	}
+		cout << "\t\t\t\t\t\t\tAdd Vehicle" << endl;
+		cout << "\t\t\t\t\t\t\t-----------" << endl;
+		cout << "\n";
+		cout << "\t\t\t\t\tChoose the type of vehicle you would like to add: " << endl;
+		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+		cout << "\t\t\t\t*\tPress 1. for Bicycle:\t\t\t\t     *" << endl;
+		cout << "\t\t\t\t*\tPress 2. for Motorcycle:\t\t\t     *" << endl;
+		cout << "\t\t\t\t*\tPress 3. for Car:\t\t\t\t     *" << endl;
+		cout << "\t\t\t\t*\tPress 4. for Truck:\t\t\t\t     *" << endl;
+		cout << "\t\t\t\t*\tPress 5. for Bus:\t\t\t\t     *" << endl;
+		cout << "\t\t\t\t*\tPress 0. to exit the menu\t\t\t     *" << endl;
+		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+		cout << "\t\t\t\t";
+		cin >> anyVehicle;
+		if (cin.fail()) {
+			system("cls");
+			cout << "\n" << endl;
+			cin.clear();
+			cin.ignore(256, '\n');
+		}
+		else {
+			break;
+		}
 	}
 	system("cls");
 	if (anyVehicle != 0) {
@@ -169,6 +169,8 @@ void Garage::addVehicle() {
 
 //Prints every element of the garage
 void Garage::listVehicles() {
+	if (!myGarage.empty())
+	{
 	cout << "\n";
 	cout << "\n";
 	cout << "\t\t\t\t\t\t\tListing of Vehicles" << endl;
@@ -177,152 +179,208 @@ void Garage::listVehicles() {
 	printGarageAttributes();
 	for (int i = 0; i < myGarage.size(); i++)
 	{
+		if (myGarage.empty())
+		{
+			cout << "\n";
+			cout << "\n";
+			cout << "\t\t\t\t";
+			cout << "No content to remove!!" << endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
+			break;
+		}
 		myGarage[i]->printVehicleAttributes();
 	}
 	cout << "\t\t\t\t";
 	system("pause");
 	system("cls");
+	}
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to list!!" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
+	}
 }
 
 //Searchfunction to find a specific registrationnumber in the garage
 void Garage::searchRegistrationNumber() {
 	bool foundVehicle = 0;
 	string input;
-	while(true){
-	cout << "\n";
-	cout << "\n";
-	cout << "\t\t\t\t\t\t\tSearch Vehicle By RegNr" << endl;
-	cout << "\t\t\t\t\t\t\t-----------------------" << endl;
-	cout << "\n";
-	printGarageAttributes();
-	cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-	//Removes the element based on searched reg.nr
-	cout << "\t\t\t\tEnter the regnr to search for: ";
-
-	cin >> input;
-	if (cin.fail()) {
-		system("cls");
-		cout << "\n" << endl;
-		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
-	}
-	else {
-		break;
-	}
-	}
-	for (auto i = 0; i != myGarage.size(); i++)
+	if (!myGarage.empty())
 	{
-		string regNr = myGarage[i]->getReg();
-		if (regNr == input) {
-			cout << "\t\t\t\tFound vehicle " << regNr << " at parkingspot nr: " << i + 1 << endl;
-			myGarage[i]->printVehicleAttributes();
-			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
-			foundVehicle = true;
+		while (true) {
+			cout << "\n";
+			cout << "\n";
+			cout << "\t\t\t\t\t\t\tSearch Vehicle By RegNr" << endl;
+			cout << "\t\t\t\t\t\t\t-----------------------" << endl;
+			cout << "\n";
+			printGarageAttributes();
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			//Removes the element based on searched reg.nr
+			cout << "\t\t\t\tEnter the regnr to search for: ";
+
+			cin >> input;
+			if (cin.fail()) {
+				system("cls");
+				cout << "\n" << endl;
+				cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
+		}
+		for (auto i = 0; i != myGarage.size(); i++)
+		{
+			string regNr = myGarage[i]->getReg();
+			if (regNr == input) {
+				cout << "\t\t\t\tFound vehicle " << regNr << " at parkingspot nr: " << i + 1 << endl;
+				myGarage[i]->printVehicleAttributes();
+				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
+				foundVehicle = true;
+			}
+		}
+		//Exceptionhandling if other input than existing vehicle is given
+		if (foundVehicle == false) {
+			cout << "\t\t\t\tNo vehicle with the selected registration was found" << endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
+
 		}
 	}
-	//Exceptionhandling if other input than existing vehicle is given
-	if (foundVehicle == false) {
-		cout << "\t\t\t\tNo vehicle with the selected registration was found" << endl;
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to search for!!" << endl;
 		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
-
 	}
-
 }
 
 //Searchfunction to find a specific color in the garage
 void Garage::searchColor() {
 	bool foundVehicle = 0;
 	string input;
-	while(true){
-	cout << "\n";
-	cout << "\n";
-	cout << "\t\t\t\t\t\t\tSearch Vehicle By Color" << endl;
-	cout << "\t\t\t\t\t\t\t-----------------------" << endl;
-	cout << "\n";
-	printGarageAttributes();
-	cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-	cout << "\t\t\t\tEnter the color to search for: ";
-
-	cin >> input;
-	if (cin.fail()) {
-		system("cls");
-		cout << "\n" << endl;
-		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
-	}
-	else {
-		break;
-	}
-	}
-	for (auto i = 0; i != myGarage.size(); i++)
+	if (!myGarage.empty())
 	{
-		string color = myGarage[i]->getColor();
-		if (color == input) {
-			cout << "\t\t\t\tFound a " << color << " vehicle at parkingspot nr: " << i + 1 << endl;
-			myGarage[i]->printVehicleAttributes();
-			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
-			foundVehicle = true;
+		while (true) {
+			cout << "\n";
+			cout << "\n";
+			cout << "\t\t\t\t\t\t\tSearch Vehicle By Color" << endl;
+			cout << "\t\t\t\t\t\t\t-----------------------" << endl;
+			cout << "\n";
+			printGarageAttributes();
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\tEnter the color to search for: ";
+
+			cin >> input;
+			if (cin.fail()) {
+				system("cls");
+				cout << "\n" << endl;
+				cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
+		}
+		for (auto i = 0; i != myGarage.size(); i++)
+		{
+			string color = myGarage[i]->getColor();
+			if (color == input) {
+				cout << "\t\t\t\tFound a " << color << " vehicle at parkingspot nr: " << i + 1 << endl;
+				myGarage[i]->printVehicleAttributes();
+				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
+				foundVehicle = true;
+			}
+		}
+		//Exceptionhandling if other input than existing vehicle is given
+		if (foundVehicle == false) {
+			cout << "\t\t\t\tNo vehicle with the selected color was found" << endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
 		}
 	}
-	//Exceptionhandling if other input than existing vehicle is given
-	if (foundVehicle == false) {
-		cout << "\t\t\t\tNo vehicle with the selected color was found" << endl;
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to search for!!" << endl;
 		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
 	}
-
 }
 
 //Searchfunction to find a type of vehicle in the garage
 void Garage::searchVehicleType() {
 	bool foundVehicle = 0;
 	string input;
-	while(true){
-	cout << "\n";
-	cout << "\n";
-	cout << "\t\t\t\t\tSearch Vehicle By Type e.g. Car, Bicycle..." << endl;
-	cout << "\t\t\t\t\t-------------------------------------------" << endl;
-	cout << "\n";
-	printGarageAttributes();
-	cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-	cout << "\t\t\t\tEnter the vehicletype to search for: ";
-
-	cin >> input;
-	if (cin.fail()) {
-		system("cls");
-		cout << "\n" << endl;
-		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
-	}
-	else {
-		break;
-	}
-	}
-	for (auto i = 0; i != myGarage.size(); i++)
+	if (!myGarage.empty())
 	{
-		string vehicleType = myGarage[i]->getTypeofVehicle();
-		if (vehicleType == input) {
-			cout << "\t\t\t\tFound a " << vehicleType << " match at parkingspot nr: " << i + 1 << endl;
-			myGarage[i]->printVehicleAttributes();
-			/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
-			foundVehicle = true;
-			continue;
+		while (true) {
+
+			cout << "\n";
+			cout << "\n";
+			cout << "\t\t\t\t\tSearch Vehicle By Type e.g. Car, Bicycle..." << endl;
+			cout << "\t\t\t\t\t-------------------------------------------" << endl;
+			cout << "\n";
+			printGarageAttributes();
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\tEnter the vehicletype to search for: ";
+
+			cin >> input;
+			if (cin.fail()) {
+				system("cls");
+				cout << "\n" << endl;
+				cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
+		}
+		for (auto i = 0; i != myGarage.size(); i++)
+		{
+			string vehicleType = myGarage[i]->getTypeofVehicle();
+			if (vehicleType == input) {
+				cout << "\t\t\t\tFound a " << vehicleType << " match at parkingspot nr: " << i + 1 << endl;
+				myGarage[i]->printVehicleAttributes();
+				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
+				foundVehicle = true;
+				continue;
+			}
+		}
+		//Exceptionhandling if other input than existing vehicle is given
+		if (foundVehicle == false) {
+			cout << "\t\t\t\tNo vehicle with the selected vehicletype was found" << endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
 		}
 	}
-	//Exceptionhandling if other input than existing vehicle is given
-	if (foundVehicle == false) {
-		cout << "\t\t\t\tNo vehicle with the selected vehicletype was found" << endl;
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to search for!!" << endl;
 		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
+	
 	}
-
 }
 
 //Prints every type of vehicle and how many of them there are in the garage
@@ -359,135 +417,152 @@ void Garage::printGarageAttributes() {
 //Removes the vehicle from the garagevector and deletes the allocation from memory
 void Garage::removeVehicle() {
 	int input;
-	while(true){
-	cout << "\n";
-	cout << "\n";
-	cout << "\t\t\t\t\t\t\tRemove Vehicle" << endl;
-	cout << "\t\t\t\t\t\t\t--------------" << endl;
-	cout << "\n";
-	printGarageAttributes();
-	cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-	cout << "\t\t\t\t*\tPress 1. to remove a vehicle by RegNumber\t\t*" << endl;
-	cout << "\t\t\t\t*\tPress 2. to remove the last entry\t\t\t*" << endl;
-	cout << "\t\t\t\t*\tPress 0. to exit the menu\t\t\t\t*" << endl;
-	cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-	cout << "\t\t\t\t";
-	cin >> input;
-	if (cin.fail()) {
-		system("cls");
-		cout << "\n" << endl;
-		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
-	}
-	else {
-		break;
-	}
-	
-	}
-	system("cls");
-	switch (input)
+	if (!myGarage.empty())
 	{
-	case 1: {
-		bool foundVehicle = 0;
-		bool choice;
-		string input;
-		while(true){
-		cout << "\n";
-		cout << "\n";
-		cout << "\t\t\t\t\t\t\tRemove Vehicle" << endl;
-		cout << "\t\t\t\t\t\t\t--------------" << endl;
-		cout << "\n";
-		printGarageAttributes();
-		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-		//Removes the element based on searched reg.nr
-		cout << "\t\t\t\tEnter the regnr to search for: ";
-	
-		cin >> input;
-		if (cin.fail()) {
-			system("cls");
-			cout << "\n" << endl;
-			cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-			cin.clear();
-			cin.ignore(256, '\n');
-		}
-		else {
-			break;
-		}
-		}
-		for (int i = 0; i != myGarage.size(); i++)
-		{
-			string regNr = myGarage[i]->getReg();
-			if (regNr == input) {
-				cout << "\t\t\t\tFound vehicle at element: " << i << endl;
-				/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
-				myGarage[i]->printVehicleAttributes();
-				foundVehicle = true;
-				//Extra safety
-				cout << "\t\t\t\tAre you sure you want to remove vehicle from garage? Yes = 1/No = 0" << endl;
-				cin >> choice;
-				if (choice == 1) {
-					if ((myGarage[i]->getTypeofVehicle().compare("Bicycle")) == 0) {
-						bicycleCounter--;
-					}
-					if ((myGarage[i]->getTypeofVehicle().compare("Car")) == 0) {
-						carCounter--;
-					}
-					if ((myGarage[i]->getTypeofVehicle().compare("MotorCycle")) == 0) {
-						motorCycleCounter--;
-					}
-					if ((myGarage[i]->getTypeofVehicle().compare("Truck")) == 0) {
-						truckCounter--;
-					}
-					if ((myGarage[i]->getTypeofVehicle().compare("Bus")) == 0) {
-						busCounter--;
-					}
-					numberOfVehicles--;
-					cout << "\t\t\t\tNumber of vehicles before removal: " << myGarage.size() << endl;
-					delete myGarage[i];
-					myGarage.erase(remove(myGarage.begin(), myGarage.end(), myGarage[i]));
-					cout << "\t\t\t\tNumber of vehicles after removal: " << myGarage.size() << " " << endl;
-				}
+		while (true) {
+
+			cout << "\n";
+			cout << "\n";
+			cout << "\t\t\t\t\t\t\tRemove Vehicle" << endl;
+			cout << "\t\t\t\t\t\t\t--------------" << endl;
+			cout << "\n";
+			printGarageAttributes();
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\t*\tPress 1. to remove a vehicle by RegNumber\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 2. to remove the last entry\t\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 0. to exit the menu\t\t\t\t*" << endl;
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\t";
+			cin >> input;
+			if (cin.fail()) {
+				system("cls");
+				cout << "\n" << endl;
+				cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+				cin.clear();
+				cin.ignore(256, '\n');
 			}
+			else {
+				break;
+			}
+
 		}
 
-		//Exceptionhandling if other input than existing vehicle is given
-		if (foundVehicle == false) {
-			cout << "\t\t\t\tNo vehicle with the selected registration was found" << endl;
+		system("cls");
+		switch (input)
+		{
+		case 1: {
+			bool foundVehicle = 0;
+			bool choice;
+			string input;
+			while (true) {
+				cout << "\n";
+				cout << "\n";
+				cout << "\t\t\t\t\t\t\tRemove Vehicle" << endl;
+				cout << "\t\t\t\t\t\t\t--------------" << endl;
+				cout << "\n";
+				printGarageAttributes();
+				cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+
+				//Removes the element based on searched reg.nr
+				cout << "\t\t\t\tEnter the regnr to search for: ";
+
+				cin >> input;
+				if (cin.fail()) {
+					system("cls");
+					cout << "\n" << endl;
+					cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+					cin.clear();
+					cin.ignore(256, '\n');
+				}
+				else {
+					break;
+				}
+			}
+			for (int i = 0; i != myGarage.size(); i++)
+			{
+				string regNr = myGarage[i]->getReg();
+				if (regNr == input) {
+					cout << "\t\t\t\tFound vehicle at element: " << i << endl;
+					/*Here a light could be connected at each parkingspot , and lights up when found at the corresponding elementposition*/
+					myGarage[i]->printVehicleAttributes();
+					foundVehicle = true;
+					//Extra safety
+					cout << "\t\t\t\tAre you sure you want to remove vehicle from garage? Yes = 1/No = 0" << endl;
+					cin >> choice;
+					if (choice == 1) {
+						if ((myGarage[i]->getTypeofVehicle().compare("Bicycle")) == 0) {
+							bicycleCounter--;
+						}
+						if ((myGarage[i]->getTypeofVehicle().compare("Car")) == 0) {
+							carCounter--;
+						}
+						if ((myGarage[i]->getTypeofVehicle().compare("MotorCycle")) == 0) {
+							motorCycleCounter--;
+						}
+						if ((myGarage[i]->getTypeofVehicle().compare("Truck")) == 0) {
+							truckCounter--;
+						}
+						if ((myGarage[i]->getTypeofVehicle().compare("Bus")) == 0) {
+							busCounter--;
+						}
+						numberOfVehicles--;
+						cout << "\t\t\t\tNumber of vehicles before removal: " << myGarage.size() << endl;
+						delete myGarage[i];
+						myGarage.erase(remove(myGarage.begin(), myGarage.end(), myGarage[i]));
+						cout << "\t\t\t\tNumber of vehicles after removal: " << myGarage.size() << " " << endl;
+					}
+				}
+			}
+
+			//Exceptionhandling if other input than existing vehicle is given
+			if (foundVehicle == false) {
+				cout << "\t\t\t\tNo vehicle with the selected registration was found" << endl;
+				system("pause");
+				system("cls");
+				break;
+			}
 			system("pause");
 			system("cls");
 			break;
 		}
+
+		case 2: {
+			//Removes the last element of the vector and withdraws 1 from the corresponding counter
+
+			if ((myGarage.back()->getTypeofVehicle().compare("Bicycle")) == 0) {
+				bicycleCounter--;
+			}
+			if ((myGarage.back()->getTypeofVehicle().compare("Car")) == 0) {
+				carCounter--;
+			}
+			if ((myGarage.back()->getTypeofVehicle().compare("MotorCycle")) == 0) {
+				motorCycleCounter--;
+			}
+			if ((myGarage.back()->getTypeofVehicle().compare("Truck")) == 0) {
+				truckCounter--;
+			}
+			if ((myGarage.back()->getTypeofVehicle().compare("Bus")) == 0) {
+				busCounter--;
+			}
+			numberOfVehicles--;
+			delete myGarage.back();
+			myGarage.pop_back();
+		}
+
+		default:
+			break;
+		}
+
+	}
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to remove!!" << endl;
+		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
-		break;
-	}
 
-	case 2: {
-		//Removes the last element of the vector and withdraws 1 from the corresponding counter
-
-		if ((myGarage.back()->getTypeofVehicle().compare("Bicycle")) == 0) {
-			bicycleCounter--;
-		}
-		if ((myGarage.back()->getTypeofVehicle().compare("Car")) == 0) {
-			carCounter--;
-		}
-		if ((myGarage.back()->getTypeofVehicle().compare("MotorCycle")) == 0) {
-			motorCycleCounter--;
-		}
-		if ((myGarage.back()->getTypeofVehicle().compare("Truck")) == 0) {
-			truckCounter--;
-		}
-		if ((myGarage.back()->getTypeofVehicle().compare("Bus")) == 0) {
-			busCounter--;
-		}
-		numberOfVehicles--;
-		delete myGarage.back();
-		myGarage.pop_back();
-	}
-
-	default:
-		break;
 	}
 }
 
@@ -497,30 +572,30 @@ void Garage::editGarage() {
 
 	do
 	{
-		while(true){
-		cout << "\n" << endl;
-		cout << "\t\t\t\t\t\t\tEditMenu" << endl;
-		cout << "\t\t\t\t\t\t\t--------" << endl;
-		cout << "\n" << endl;
-		printGarageAttributes();
-		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-		cout << "\t\t\t\t*\tPress 1. to add Vehicles to the garage\t\t\t*" << endl;
-		cout << "\t\t\t\t*\tPress 2. to see a list of the Vehicles\t\t\t*" << endl;
-		cout << "\t\t\t\t*\tPress 3. to remove Vehicles from the garage\t\t*" << endl;
-		cout << "\t\t\t\t*\tPress 4. to search for Vehicles in the garage\t\t*" << endl;
-		cout << "\t\t\t\t*\tPress 5. to list vehicletypes in the garage\t\t*" << endl;
-		cout << "\t\t\t\t*\tPress 0. to exit the editmenu\t\t\t\t*" << endl;
-		cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-		cout << "\t\t\t\t";
-		cin >> editMenuChoice;
-		if (cin.fail()) {
-			system("cls");
-			cin.clear();
-			cin.ignore(256, '\n');
-		}
-		else {
-			break;
-		}
+		while (true) {
+			cout << "\n" << endl;
+			cout << "\t\t\t\t\t\t\tEditMenu" << endl;
+			cout << "\t\t\t\t\t\t\t--------" << endl;
+			cout << "\n" << endl;
+			printGarageAttributes();
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\t*\tPress 1. to add Vehicles to the garage\t\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 2. to see a list of the Vehicles\t\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 3. to remove Vehicles from the garage\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 4. to search for Vehicles in the garage\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 5. to list vehicletypes in the garage\t\t*" << endl;
+			cout << "\t\t\t\t*\tPress 0. to exit the editmenu\t\t\t\t*" << endl;
+			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+			cout << "\t\t\t\t";
+			cin >> editMenuChoice;
+			if (cin.fail()) {
+				system("cls");
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
 		}
 		system("cls");
 
@@ -556,61 +631,73 @@ void Garage::searchMenu() {
 
 	int menuChoice = 0;
 	bool choose;
-	do {
-		
-		
-		while(true){
-			cout << "\n" << endl;
-			cout << "\t\t\t\t\t\t\tSearchMenu" << endl;
-			cout << "\t\t\t\t\t\t\t----------" << endl;
-			cout << "\n" << endl;
-			printGarageAttributes();
-			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-			cout << "\t\t\t\t*\tPress 1. to Search for registrationnumbers in the garage*" << endl;
-			cout << "\t\t\t\t*\tPress 2. to Search for a specific color in the garage\t*" << endl;
-			cout << "\t\t\t\t*\tPress 3. to Search for a type of vehicle in the garage\t*" << endl;
-			cout << "\t\t\t\t*\tPress 0. to exit to Editmenu\t\t\t\t*" << endl;
-			cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
-			cout << "\t\t\t\t";
-		cin >> menuChoice;
-		if (cin.fail()) {
+	if (!myGarage.empty())
+	{
+		do {
+			while (true) {
+
+				cout << "\n" << endl;
+				cout << "\t\t\t\t\t\t\tSearchMenu" << endl;
+				cout << "\t\t\t\t\t\t\t----------" << endl;
+				cout << "\n" << endl;
+				printGarageAttributes();
+				cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+				cout << "\t\t\t\t*\tPress 1. to Search for registrationnumbers in the garage*" << endl;
+				cout << "\t\t\t\t*\tPress 2. to Search for a specific color in the garage\t*" << endl;
+				cout << "\t\t\t\t*\tPress 3. to Search for a type of vehicle in the garage\t*" << endl;
+				cout << "\t\t\t\t*\tPress 0. to exit to Editmenu\t\t\t\t*" << endl;
+				cout << "\t\t\t\t-----------------------------------------------------------------" << endl;
+				cout << "\t\t\t\t";
+				cin >> menuChoice;
+				if (cin.fail()) {
+					system("cls");
+					cin.clear();
+					cin.ignore(256, '\n');
+				}
+				else {
+					break;
+				}
+			}
 			system("cls");
-			cin.clear();
-			cin.ignore(256, '\n');
-		}
-		else {
-			break;
-		}
-		}
-		system("cls");
 
-		switch (menuChoice)
-		{
-		case 1: {
-			searchRegistrationNumber();
-			cout << "\t\t\t\t";
-			system("pause");
-			break;
-		}
-		case 2: {
-			searchColor();
-			cout << "\t\t\t\t";
-			system("pause");
-			break;
-		}
-		case 3: {
-			searchVehicleType();
-			cout << "\t\t\t\t";
-			system("pause");
-			break;
-		}
-		default:
-			break;
-		}
+			switch (menuChoice)
+			{
+			case 1: {
+				searchRegistrationNumber();
+				cout << "\t\t\t\t";
+				system("pause");
+				break;
+			}
+			case 2: {
+				searchColor();
+				cout << "\t\t\t\t";
+				system("pause");
+				break;
+			}
+			case 3: {
+				searchVehicleType();
+				cout << "\t\t\t\t";
+				system("pause");
+				break;
+			}
+			default:
+				break;
+			}
+			system("cls");
+		} while (menuChoice != 0);
+	}
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to search for!!" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
 		system("cls");
-	} while (menuChoice != 0);
-
+	}
 }
+
+
 
 void Garage::addGarage() {
 

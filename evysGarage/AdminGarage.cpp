@@ -57,8 +57,11 @@ void AdminGarage::addGarageToCollection() {
 	garageCollection.push_back(mainGarage);
 };
 void AdminGarage::listGarage() {
+	if (!garageCollection.empty())
+	{
 	for (int i = 0; i < garageCollection.size(); i++)
 	{
+
 		cout << "\t\t\t\t--------------------------------------------------------------" << endl;
 		cout << "\t\t\t\t*\t\tGaragenumber:\t " << i << endl;
 		garageCollection[i]->printGarageAttributes();
@@ -69,57 +72,83 @@ void AdminGarage::listGarage() {
 	cout << "\t\t\t\t";
 	system("pause");
 	system("cls");
-};
-void AdminGarage::accessGarage() {
-	bool foundGarage = 0;
-	string input;
-	while(true){
-	cout << "\n";
-	cout << "\n";
-	cout << "\t\t\t\tEnter the GarageName to access: ";
-
-	cin >> input;
-	if (cin.fail()) {
-		system("cls");
-		cout << "\n" << endl;
-		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
 	}
 	else {
-		break;
-	}
-}
-	for (auto i = 0; i != garageCollection.size(); i++)
-	{
-		string garageName = garageCollection[i]->getNameOfGarage();
-		if (garageName == input) {
-			cout << "\t\t\t\tFound Garage " << garageName << " at row nr: " << i + 1 << endl;
-			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-			cout << "\t\t\t\tGaragenumber:\t " << i << endl;
-			garageCollection[i]->printGarageAttributes();
-			cout << "\t\t\t\t--------------------------------------------------------------" << endl;
-			cout << "\n" << endl;
-			cout << "\t\t\t\tPress any key to Access the Garage" << endl;
-			cout << "\t\t\t\t";
-			system("pause");
-			system("cls");
-			garageCollection[i]->editGarage();
-			foundGarage = true;
-
-		}
-	}
-	//Exceptionhandling if other input than existing vehicle is given
-	if (foundGarage == false) {
-		cout << "\t\t\t\tNo garage with the corresponding name was found" << endl;
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to display!" << endl;
 		cout << "\t\t\t\t";
 		system("pause");
 		system("cls");
 	}
-}
+};
+void AdminGarage::accessGarage() {
+	bool foundGarage = 0;
+	string input;
+	if (!garageCollection.empty())
+	{
+	while (true) {
+	
+
+			cout << "\n";
+			cout << "\n";
+			cout << "\t\t\t\tEnter the GarageName to access: ";
+
+			cin >> input;
+			if (cin.fail()) {
+				system("cls");
+				cout << "\n" << endl;
+				cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
+		}
+		for (auto i = 0; i != garageCollection.size(); i++)
+		{
+			string garageName = garageCollection[i]->getNameOfGarage();
+			if (garageName == input) {
+				cout << "\t\t\t\tFound Garage " << garageName << " at row nr: " << i + 1 << endl;
+				cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+				cout << "\t\t\t\tGaragenumber:\t " << i << endl;
+				garageCollection[i]->printGarageAttributes();
+				cout << "\t\t\t\t--------------------------------------------------------------" << endl;
+				cout << "\n" << endl;
+				cout << "\t\t\t\tPress any key to Access the Garage" << endl;
+				cout << "\t\t\t\t";
+				system("pause");
+				system("cls");
+				garageCollection[i]->editGarage();
+				foundGarage = true;
+
+			}
+		}
+		//Exceptionhandling if other input than existing vehicle is given
+		if (foundGarage == false) {
+			cout << "\t\t\t\tNo garage with the corresponding name was found" << endl;
+			cout << "\t\t\t\t";
+			system("pause");
+			system("cls");
+		}
+	}
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to display!" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
+	}
+	}
+
 void AdminGarage::searchGarage() {
 	bool foundGarage = 0;
 	string input;
+	if(!garageCollection.empty()){
 	while(true){
 	cout << "\n" << endl;
 	cout << "\n" << endl;
@@ -161,86 +190,109 @@ void AdminGarage::searchGarage() {
 		system("cls");
 
 	}
+	}
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to search for!!" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
+	}
 }
 void AdminGarage::removeGarage() {
 	int input;
-	while(true){
-	cout << "1 to remove a specific garage by entering garagename" << endl;
-	cout << "2 to remove the last entry" << endl;
-	cout << "0 to exit the menu" << endl;
-
-	cin >> input;
-	if (cin.fail()) {
-		system("cls");
-		cout << "\n" << endl;
-		cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-		cin.clear();
-		cin.ignore(256, '\n');
-	}
-	else {
-		break;
-	}
-	}
-	system("cls");
-	switch (input)
+	if (!garageCollection.empty())
 	{
-	case 1: {
-		bool foundGarage = 0;
-		bool choice;
-		string input;
-		while(true){
-		
-		//Removes the element based on searched reg.nr
-		cout << "Enter the  to search for: " << endl;
-		
-		cin >> input;
-		if (cin.fail()) {
-			system("cls");
-			cout << "\n" << endl;
-			cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
-			cin.clear();
-			cin.ignore(256, '\n');
+		while (true) {
+
+
+			cout << "1 to remove a specific garage by entering garagename" << endl;
+			cout << "2 to remove the last entry" << endl;
+			cout << "0 to exit the menu" << endl;
+
+			cin >> input;
+			if (cin.fail()) {
+				system("cls");
+				cout << "\n" << endl;
+				cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+				cin.clear();
+				cin.ignore(256, '\n');
+			}
+			else {
+				break;
+			}
 		}
-		else {
+		system("cls");
+		switch (input)
+		{
+		case 1: {
+			bool foundGarage = 0;
+			bool choice;
+			string input;
+			while (true) {
+
+				//Removes the element based on searched reg.nr
+				cout << "Enter the  to search for: " << endl;
+
+				cin >> input;
+				if (cin.fail()) {
+					system("cls");
+					cout << "\n" << endl;
+					cout << "\t\t\t\t*\tWrong Input! Try again! " << endl;
+					cin.clear();
+					cin.ignore(256, '\n');
+				}
+				else {
+					break;
+				}
+			}
+
+			for (int i = 0; i != garageCollection.size(); i++)
+			{
+				string garageName = garageCollection[i]->getNameOfGarage();
+				if (garageName == input) {
+					cout << "Found Garage at row: " << i + 1 << endl;
+					garageCollection[i]->printGarageAttributes();
+					foundGarage = true;
+					//Extra safety
+					cout << "Are you sure you want to remove garage from collection? Yes = 1/No = 0" << endl;
+					cin >> choice;
+					if (choice == 1) {
+						cout << "Number of garages before removal: " << garageCollection.size() << endl;
+						delete garageCollection[i];
+						garageCollection.erase(remove(garageCollection.begin(), garageCollection.end(), garageCollection[i]));
+						cout << "Number of vehicles after removal: " << garageCollection.size() << " " << endl;
+					}
+				}
+			}
+
+			//Exceptionhandling if other input than existing vehicle is given
+			if (foundGarage == false) {
+				cout << "No garage with the corresponding name was found" << endl;
+			}
+			break;
+		}
+
+		case 2: {
+			//Removes the last element of the vector
+			garageCollection.pop_back();
+		}
+
+		default:
 			break;
 		}
 	}
-
-		for (int i = 0; i != garageCollection.size(); i++)
-		{
-			string garageName = garageCollection[i]->getNameOfGarage();
-			if (garageName == input) {
-				cout << "Found Garage at row: " << i + 1 << endl;
-				garageCollection[i]->printGarageAttributes();
-				foundGarage = true;
-				//Extra safety
-				cout << "Are you sure you want to remove garage from collection? Yes = 1/No = 0" << endl;
-				cin >> choice;
-				if (choice == 1) {
-					cout << "Number of garages before removal: " << garageCollection.size() << endl;
-					delete garageCollection[i];
-					garageCollection.erase(remove(garageCollection.begin(), garageCollection.end(), garageCollection[i]));
-					cout << "Number of vehicles after removal: " << garageCollection.size() << " " << endl;
-				}
-			}
-		}
-
-		//Exceptionhandling if other input than existing vehicle is given
-		if (foundGarage == false) {
-			cout << "No garage with the corresponding name was found" << endl;
-		}
-		break;
+	else {
+		cout << "\n";
+		cout << "\n";
+		cout << "\t\t\t\t";
+		cout << "No content to remove!!" << endl;
+		cout << "\t\t\t\t";
+		system("pause");
+		system("cls");
 	}
-
-	case 2: {
-		//Removes the last element of the vector
-		garageCollection.pop_back();
-	}
-
-	default:
-		break;
-	}
-
 }
 
 void AdminGarage::startAdmin() {
