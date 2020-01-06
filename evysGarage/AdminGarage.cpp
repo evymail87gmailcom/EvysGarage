@@ -242,6 +242,7 @@ void AdminGarage::removeGarage() {
 	}
 
 }
+
 void AdminGarage::startAdmin() {
 	int choice = 0;
 	

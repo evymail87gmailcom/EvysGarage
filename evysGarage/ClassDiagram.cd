@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Vehicle" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAABKAACAAAAAAQAAIAAAAABAAAIACAAAAEgAAAQAI=</HashCode>
+      <FileName>Vehicle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Truck" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAEAAAQAQAAIAAAQAAAAAAAEAAAAEgAAAAAI=</HashCode>
+      <FileName>Truck.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MotorCycle" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAACAAAAQAAIAAAAAAEAAAAEAAAAEgAAAAAI=</HashCode>
+      <FileName>MotorCycle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Car" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAIAAAAQAAAAQAAIAAAAAAAAAAAEAAAAEgAAAAAI=</HashCode>
+      <FileName>Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bus" Collapsed="true">
+    <Position X="13.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAIAAAAAAAAAQAAIAAAAAIAAAAAEAAAAEgAAAQAI=</HashCode>
+      <FileName>Bus.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AdminGarage" Collapsed="true">
+    <Position X="10.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAEAEAEAAQgBAAAKAAAAAAAAAAIEAAAEAAAAAAAAAA=</HashCode>
+      <FileName>AdminGarage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Bicycle" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAKAAAAAACAAQAAIAAAkAAABAAAEAAAAEgAAAAAI=</HashCode>
+      <FileName>Bicycle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Garage" Collapsed="true">
+    <Position X="10.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAGAKIAgAAEEAAEAAAAjSAAAgSiAMQAAEAABABIAAA=</HashCode>
+      <FileName>GarageHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
