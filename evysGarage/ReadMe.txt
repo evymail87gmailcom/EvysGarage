@@ -25,6 +25,7 @@ Things to be done:
 -Make a searchfunction for the parkingspace so that the contents on that space can be removed (with the currentin removefunction no bicycles can be removed).
 -Have a lookover at the menualternatives to make sure that 0 is needed to exit the current menu.
 -Make a max/min limit for the number of characters registered when adding a vehicle on each post(especially reg.nr).
+-Write a function to disregard casesensitivity.
 -In the remove-function, before the deletion and removal of the object, add the contents to a vector containing "removed-vehicles". Practical if one would like to add this vehicle again to the garage (long-distance drive for eg.).
 -If the garageCollection contains an object with garagename identical to the one the user is trying to add, garagename is invalid and the user returns to the add-garage menu.
 -Add adress as attribute for the garage-class.
